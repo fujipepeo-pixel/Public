@@ -61,6 +61,7 @@
     gap: 16px;
   }
   .card {
+    position: relative;
     display: flex;
     flex-direction: column;
     background: #fff;
@@ -91,6 +92,18 @@
   .badge.rakuten { background: #ffe4e4; color: #bf1e2e; }
   .badge.qoo10 { background: #e4edff; color: #1e4dbf; }
   .badge.yahoo { background: #fff0d6; color: #b45f00; }
+  .event-badge {
+    position: absolute;
+    top: -8px;
+    left: 8px;
+    background: linear-gradient(90deg, #ff5f6d, #ff9f43);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 999px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  }
   .card .title {
     font-size: 0.95rem;
     line-height: 1.5;
@@ -101,6 +114,8 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+  .card .review { font-size: 0.75rem; color: #e8a400; margin-bottom: 2px; }
+  .card .review .count { color: #999; margin-left: 4px; }
   .card .price { font-size: 1.05rem; font-weight: 700; }
   .empty { text-align: center; color: #fff; padding: 48px 0; background: rgba(255,255,255,0.15); border-radius: 12px; }
   .pr-note {
@@ -233,18 +248,158 @@
   }
   .search-box::placeholder { color: #888; }
   .search-count { text-align: center; font-size: 0.8rem; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,0.25); margin-bottom: 16px; }
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+  .toolbar select, .toolbar input[type="number"] {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    color: #222;
+    background: rgba(255,255,255,0.85);
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 999px;
+    outline: none;
+  }
+  .toolbar input[type="number"] { width: 110px; }
+  .load-more {
+    display: block;
+    margin: 20px auto 0;
+    padding: 12px 32px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #222;
+    background: rgba(255,255,255,0.85);
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 999px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    cursor: pointer;
+  }
+  .genre-nav {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 4px 2px 16px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .genre-nav a {
+    flex: 0 0 auto;
+    padding: 6px 14px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #222;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 999px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .genre-nav a.current { background: rgba(255,255,255,0.95); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+  .genre-intro {
+    background: rgba(255,255,255,0.75);
+    border-radius: 12px;
+    padding: 14px 18px;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  .ranking-section { margin-bottom: 24px; }
+  .rank-card { position: relative; }
+  .rank-number {
+    position: absolute;
+    top: -10px;
+    left: -6px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ffd76a, #ff9f43);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 800;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  }
+  .site-footer { text-align: center; margin-top: 40px; font-size: 0.75rem; }
+  .site-footer a { color: #fff; text-decoration: underline; margin: 0 8px; text-shadow: 0 1px 3px rgba(0,0,0,0.25); }
+  .legal-content {
+    background: rgba(255,255,255,0.92);
+    border-radius: 16px;
+    padding: 24px 28px;
+    font-size: 0.9rem;
+    line-height: 1.9;
+    color: #333;
+  }
+  .legal-content h2 { font-size: 1.05rem; margin: 24px 0 8px; color: #222; }
+  .legal-content h2:first-child { margin-top: 0; }
+  .legal-content ul { margin: 4px 0; padding-left: 1.4em; }
 </style>
 </head>
 <body>
 <div class="wrap">
 <a class="back-link" href="index.html">&larr; ジャンル一覧に戻る</a>
+<nav class="genre-nav">
+<a href="cosme.html">韓国コスメ</a>
+<a href="denki.html">家電</a>
+<a href="gaming.html">ゲーミングPC・周辺機器</a>
+<a href="kitchen.html">キッチン家電</a>
+<a href="baby.html" class="current">ベビー用品</a>
+<a href="pet.html">ペット用品</a>
+<a href="outdoor.html">アウトドア用品</a>
+<a href="sports.html">スポーツ用品</a>
+</nav>
 <h1>ベビー用品</h1>
 <p class="subtitle"><span class="subtitle-text">「ベビー用品」の商品一覧(全20件)</span></p>
-<p class="updated">最終更新: 2026-08-11 22:01</p>
+<p class="updated">最終更新: 2026-08-11 22:26</p>
+<p class="genre-intro">ベビーカーや育児グッズなど、今すぐ購入できるベビー用品をまとめています。</p>
+<div class="ranking-section">
+<p class="pickup-heading"><span class="pickup-heading-text">ランキング TOP3</span></p>
+<div class="pickup-scroll">
+<a class="pickup-card rank-card" href="https://hb.afl.rakuten.co.jp/hgc/g00tgivn.ygcj458c.g00tgivn.ygcj525b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpigeon-shop%2F2000363s%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fpigeon-shop%2Fi%2F10001747%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+  <span class="rank-number">1</span>
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/pigeon-shop/cabinet/thumb/11827558/1039243.jpg?_ex=128x128" alt="" loading="lazy">
+  <div class="pickup-name">【80枚×40個】おしりナップ やわらか厚手仕上げ 限定デザイン(森のかくれんぼ) | 0ヵ月〜 おしり拭き お尻拭き お尻ふき おしりふき ナップ おてふき 体拭き からだふき 詰め替え 赤ちゃん 赤ちゃん用品 ベビー用品 衛生用品</div>
+    <div class="review">★4.8<span class="count">(7,893件)</span></div>
+  <div class="pickup-price">¥4,070</div>
+</a>
+
+<a class="pickup-card rank-card" href="https://hb.afl.rakuten.co.jp/hgc/g00u1ajn.ygcj4883.g00u1ajn.ygcj53c6/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcalmisence%2Fswaddle%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fcalmisence%2Fi%2F10000038%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+  <span class="rank-number">2</span>
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/calmisence/cabinet/item/swaddle/swm1_rak01_250815b.jpg?_ex=128x128" alt="" loading="lazy">
+  <div class="pickup-name">スワドルメリー おくるみ スワドル スリーパー 新生児 通気性 すわどる 手が出せる キッズ 赤ちゃん ベビー モロー反射 くま レモン 星 おしゃれ かわいい 寝かしつけ 夜泣き 退院 綿 100 男の子 女の子 出産祝い ベビー用品 手出し コペルタ 通年 春 夏 秋 冬 兼 用</div>
+    <div class="review">★4.7<span class="count">(6,304件)</span></div>
+  <div class="pickup-price">¥2,080</div>
+</a>
+
+<a class="pickup-card rank-card" href="https://hb.afl.rakuten.co.jp/hgc/g00pv4jn.ygcj4f39.g00pv4jn.ygcj53a9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flecdirect%2Fe170_999atsu15p%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Flecdirect%2Fi%2F10001750%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+  <span class="rank-number">3</span>
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/lecdirect/cabinet/img/e/e00975.jpg?_ex=128x128" alt="" loading="lazy">
+  <div class="pickup-name">おしりふき まとめ買い 水99.9 厚手 水分たっぷり シート【送料無料】54枚×15個 計810枚【肌にやさしい】 おしり拭き お尻拭き お尻ふき 厚手 赤ちゃん おしりふき厚手 ベビー レック ダイレクト</div>
+    <div class="review">★4.6<span class="count">(3,867件)</span></div>
+  <div class="pickup-price">¥2,110</div>
+</a>
+
+</div>
+</div>
+<div class="toolbar">
 <input type="search" class="search-box" id="search-box" placeholder="商品名・ブランド名で絞り込み" autocomplete="off">
+<select id="sort-select">
+  <option value="recent">新着順</option>
+  <option value="price-asc">価格が安い順</option>
+  <option value="price-desc">価格が高い順</option>
+</select>
+<input type="number" id="price-min" placeholder="最低価格" min="0">
+<input type="number" id="price-max" placeholder="最高価格" min="0">
+</div>
 <p class="search-count" id="search-count"></p>
 <div id="product-list">
-<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00tgivn.ygcj458c.g00tgivn.ygcj525b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpigeon-shop%2F2000363s%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fpigeon-shop%2Fi%2F10001747%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00tgivn.ygcj458c.g00tgivn.ygcj525b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpigeon-shop%2F2000363s%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fpigeon-shop%2Fi%2F10001747%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored" data-price="4070" data-checked-at="">
   <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/pigeon-shop/cabinet/thumb/11827558/1039243.jpg?_ex=128x128" alt="" loading="lazy">
   <div class="body">
     <div class="top">
@@ -252,11 +407,12 @@
       <span class="badge rakuten">楽天市場</span>
     </div>
     <div class="title">【80枚×40個】おしりナップ やわらか厚手仕上げ 限定デザイン(森のかくれんぼ) | 0ヵ月〜 おしり拭き お尻拭き お尻ふき おしりふき ナップ おてふき 体拭き からだふき 詰め替え 赤ちゃん 赤ちゃん用品 ベビー用品 衛生用品</div>
+    <div class="review">★4.8<span class="count">(7,893件)</span></div>
     <div class="price">¥4,070</div>
   </div>
 </a>
 
-<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00u1ajn.ygcj4883.g00u1ajn.ygcj53c6/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcalmisence%2Fswaddle%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fcalmisence%2Fi%2F10000038%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00u1ajn.ygcj4883.g00u1ajn.ygcj53c6/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcalmisence%2Fswaddle%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fcalmisence%2Fi%2F10000038%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored" data-price="2080" data-checked-at="">
   <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/calmisence/cabinet/item/swaddle/swm1_rak01_250815b.jpg?_ex=128x128" alt="" loading="lazy">
   <div class="body">
     <div class="top">
@@ -264,11 +420,12 @@
       <span class="badge rakuten">楽天市場</span>
     </div>
     <div class="title">スワドルメリー おくるみ スワドル スリーパー 新生児 通気性 すわどる 手が出せる キッズ 赤ちゃん ベビー モロー反射 くま レモン 星 おしゃれ かわいい 寝かしつけ 夜泣き 退院 綿 100 男の子 女の子 出産祝い ベビー用品 手出し コペルタ 通年 春 夏 秋 冬 兼 用</div>
+    <div class="review">★4.7<span class="count">(6,304件)</span></div>
     <div class="price">¥2,080</div>
   </div>
 </a>
 
-<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00pv4jn.ygcj4f39.g00pv4jn.ygcj53a9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flecdirect%2Fe170_999atsu15p%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Flecdirect%2Fi%2F10001750%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00pv4jn.ygcj4f39.g00pv4jn.ygcj53a9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flecdirect%2Fe170_999atsu15p%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Flecdirect%2Fi%2F10001750%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored" data-price="2110" data-checked-at="">
   <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/lecdirect/cabinet/img/e/e00975.jpg?_ex=128x128" alt="" loading="lazy">
   <div class="body">
     <div class="top">
@@ -276,11 +433,12 @@
       <span class="badge rakuten">楽天市場</span>
     </div>
     <div class="title">おしりふき まとめ買い 水99.9 厚手 水分たっぷり シート【送料無料】54枚×15個 計810枚【肌にやさしい】 おしり拭き お尻拭き お尻ふき 厚手 赤ちゃん おしりふき厚手 ベビー レック ダイレクト</div>
+    <div class="review">★4.6<span class="count">(3,867件)</span></div>
     <div class="price">¥2,110</div>
   </div>
 </a>
 
-<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00txfwn.ygcj4a58.g00txfwn.ygcj513e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flarutan%2Fn026%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Flarutan%2Fi%2F10000015%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00txfwn.ygcj4a58.g00txfwn.ygcj513e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flarutan%2Fn026%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Flarutan%2Fi%2F10000015%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored" data-price="6980" data-checked-at="">
   <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/larutan/cabinet/larutan/n026/n026-search-image/n026m-c-top.jpg?_ex=128x128" alt="" loading="lazy">
   <div class="body">
     <div class="top">
@@ -288,11 +446,12 @@
       <span class="badge rakuten">楽天市場</span>
     </div>
     <div class="title">口コミ3400件!!◆楽天1位17冠◆芸能人愛用＜管理栄養士推薦＞離乳食冊子付き♪ミルクウォーマー ボトルウォーマー 哺乳瓶ウォーマー ミルク 調乳ポット 離乳食 缶ミルク 双子 哺乳瓶 ウォーマー 保温 調乳 母乳 除菌 ベビー 出産準備 赤ちゃん ベビー用品 出産祝い ギフト</div>
+    <div class="review">★4.6<span class="count">(3,411件)</span></div>
     <div class="price">¥6,980</div>
   </div>
 </a>
 
-<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00twban.ygcj43e4.g00twban.ygcj5232/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwagaku0204%2Fyodarekake%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fwagaku0204%2Fi%2F10000003%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00twban.ygcj43e4.g00twban.ygcj5232/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwagaku0204%2Fyodarekake%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fwagaku0204%2Fi%2F10000003%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored" data-price="2480" data-checked-at="">
   <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/wagaku0204/cabinet/08870368/10398488/10487811/imgrc0116344845.jpg?_ex=128x128" alt="" loading="lazy">
   <div class="body">
     <div class="top">
@@ -300,11 +459,12 @@
       <span class="badge rakuten">楽天市場</span>
     </div>
     <div class="title">【アフターセール！全品ポイント5倍】 テマロン スタイ お食事エプロン 長袖 食べこぼし 離乳食 掴み食べ ベビーエプロン 保育園 撥水 大きめ 男の子 女の子 赤ちゃん おしゃれ BLW 子供用 幼児 ベビー用品 出産祝い 送料無料</div>
+    <div class="review">★4.5<span class="count">(2,915件)</span></div>
     <div class="price">¥2,480</div>
   </div>
 </a>
 
-<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00u1ajn.ygcj4883.g00u1ajn.ygcj53c6/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcalmisence%2Fhipseatbk%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fcalmisence%2Fi%2F10000000%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00u1ajn.ygcj4883.g00u1ajn.ygcj53c6/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcalmisence%2Fhipseatbk%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fcalmisence%2Fi%2F10000000%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored" data-price="3499" data-checked-at="">
   <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/calmisence/cabinet/item/hip/20220302hipseatbk/hipseat_rakuten_1.jpg?_ex=128x128" alt="" loading="lazy">
   <div class="body">
     <div class="top">
@@ -312,11 +472,12 @@
       <span class="badge rakuten">楽天市場</span>
     </div>
     <div class="title">【楽天1位】ヒップシート コペルタ 抱っこ紐 コンパクト おむつ おしりふき 収納ポケット付き 20kg 抱っこ カバン 荷物 ショルダー バッグ 折り畳み 折りたたみ 赤ちゃん 前向き ウエストポーチ 簡単 シングル 人気 出産祝い 新生児 腰痛対策 ママ ギフト ベビー用品 軽量</div>
+    <div class="review">★4.5<span class="count">(2,874件)</span></div>
     <div class="price">¥3,499</div>
   </div>
 </a>
 
-<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00txfwn.ygcj4a58.g00txfwn.ygcj513e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flarutan%2Fn022-a-wh-set%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Flarutan%2Fi%2F10000000%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00txfwn.ygcj4a58.g00txfwn.ygcj513e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flarutan%2Fn022-a-wh-set%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Flarutan%2Fi%2F10000000%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored" data-price="2480" data-checked-at="">
   <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/larutan/cabinet/thum/n022-a-wh-set-top.jpg?_ex=128x128" alt="" loading="lazy">
   <div class="body">
     <div class="top">
@@ -324,11 +485,12 @@
       <span class="badge rakuten">楽天市場</span>
     </div>
     <div class="title">口コミ2700件!!＜芸能人愛用＞楽天1位6冠≪レビュー特典≫LARUTAN おむつストッカー 蓋付き 仕切り 収納 オムツストッカー お世話セット おむつバッグ 大容量 ベビー用品 収納ケース おむつ入れ おもちゃ バッグ 出産準備 赤ちゃん 出産祝い おしゃれ おむつケーキ ギフト</div>
+    <div class="review">★4.5<span class="count">(2,846件)</span></div>
     <div class="price">¥2,480</div>
   </div>
 </a>
 
-<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00tm76n.ygcj4b6b.g00tm76n.ygcj530f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Funited-f%2Frh-268%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Funited-f%2Fi%2F10000029%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00tm76n.ygcj4b6b.g00tm76n.ygcj530f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Funited-f%2Frh-268%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Funited-f%2Fi%2F10000029%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored" data-price="4980" data-checked-at="">
   <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/united-f/cabinet/t01/rh-268_t02.jpg?_ex=128x128" alt="" loading="lazy">
   <div class="body">
     <div class="top">
@@ -336,11 +498,12 @@
       <span class="badge rakuten">楽天市場</span>
     </div>
     <div class="title">【いつくし公式】【いつくし公式】さく乳器 電動 RH-268 izxi いつくし 電動搾乳器 さく乳機 搾乳機 赤ちゃん ベビー用品 母乳育児 調節 乳首 保存 授乳用品 搾乳 ベビー マタニティ 授乳 哺乳びん 哺乳瓶 さくにゅうき コードレス 搾乳ポンプ 送料無料</div>
+    <div class="review">★4.6<span class="count">(2,822件)</span></div>
     <div class="price">¥4,980</div>
   </div>
 </a>
 
-<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00pv4jn.ygcj4f39.g00pv4jn.ygcj53a9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flecdirect%2F4560319046015%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Flecdirect%2Fi%2F10002059%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00pv4jn.ygcj4f39.g00pv4jn.ygcj53a9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flecdirect%2F4560319046015%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Flecdirect%2Fi%2F10002059%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored" data-price="2310" data-checked-at="">
   <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/lecdirect/cabinet/img/e/e00655.jpg?_ex=128x128" alt="" loading="lazy">
   <div class="body">
     <div class="top">
@@ -348,11 +511,12 @@
       <span class="badge rakuten">楽天市場</span>
     </div>
     <div class="title">赤ちゃん用品 ベビー用品 おしり拭き おしりふき まとめ買い 水99.9 厚手 シート【送料無料】【ネット限定デザイン】 水分たっぷり 60枚×15P お尻拭き セット お尻ふき 赤ちゃん ベビー おしゃれ 大量 日本製</div>
+    <div class="review">★4.8<span class="count">(2,708件)</span></div>
     <div class="price">¥2,310</div>
   </div>
 </a>
 
-<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00twjxn.ygcj440c.g00twjxn.ygcj5f98/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fai-corp%2Faiyez01aw%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fai-corp%2Fi%2F10000095%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00twjxn.ygcj440c.g00twjxn.ygcj5f98/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fai-corp%2Faiyez01aw%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fai-corp%2Fi%2F10000095%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored" data-price="3650" data-checked-at="">
   <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/ai-corp/cabinet/aiyez01aw/imgrc0093046489.jpg?_ex=128x128" alt="" loading="lazy">
   <div class="body">
     <div class="top">
@@ -360,11 +524,12 @@
       <span class="badge rakuten">楽天市場</span>
     </div>
     <div class="title">【楽天1位】絶壁防止枕 ベビー枕 洗える 吐き戻し防止 赤ちゃん 枕 まくら 絶壁防止 出産祝い ベビー用品 ベビー 絶壁 枕 三面調節 通気性抜群 丸洗い 新生児 0ヶ月 向き癖防止 高さ調節 子供 ベビーピロー 向き癖丸い頭 ベビーまくら 通気 睡眠サポート</div>
+    <div class="review">★4.4<span class="count">(2,656件)</span></div>
     <div class="price">¥3,650</div>
   </div>
 </a>
 
-<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00qux3n.ygcj4a74.g00qux3n.ygcj504f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbebechambre%2F746007%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fbebechambre%2Fi%2F10000152%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00qux3n.ygcj4a74.g00qux3n.ygcj504f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbebechambre%2F746007%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fbebechambre%2Fi%2F10000152%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored" data-price="15400" data-checked-at="">
   <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/bebechambre/cabinet/farska/review_cp/746007_cmp1.jpg?_ex=128x128" alt="" loading="lazy">
   <div class="body">
     <div class="top">
@@ -372,11 +537,12 @@
       <span class="badge rakuten">楽天市場</span>
     </div>
     <div class="title">レビュー投稿特典あり！【公式販売店】ファルスカ ベッドインベッド　フレックス | 添い寝☆川の字☆折り畳み☆持ち運び☆ベビーベッド☆お座りサポート☆お食事シート☆5歳まで使用できる【赤ちゃん】【ベビー用品】【あす楽対応】</div>
+    <div class="review">★4.3<span class="count">(2,350件)</span></div>
     <div class="price">¥15,400</div>
   </div>
 </a>
 
-<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00tb0pn.ygcj4bce.g00tb0pn.ygcj5434/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fplaisiureux%2Fpl_16%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fplaisiureux%2Fi%2F10000022%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00tb0pn.ygcj4bce.g00tb0pn.ygcj5434/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fplaisiureux%2Fpl_16%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fplaisiureux%2Fi%2F10000022%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored" data-price="2980" data-checked-at="">
   <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/plaisiureux/cabinet/09353293/10088973/2023-12-1.jpg?_ex=128x128" alt="" loading="lazy">
   <div class="body">
     <div class="top">
@@ -384,11 +550,12 @@
       <span class="badge rakuten">楽天市場</span>
     </div>
     <div class="title">【保育士推薦×LDK Babyに掲載】＼楽天1位／ ヒップシート 抱っこ紐 抱っこひも だっこひも だっこ 抱っこ 滑り止め付 収納付き ウエストポーチ 赤ちゃん プレジュール ベビー用品 出産祝い プレゼント ギフト 男女兼用 育児グッズ</div>
+    <div class="review">★4.5<span class="count">(2,221件)</span></div>
     <div class="price">¥2,980</div>
   </div>
 </a>
 
-<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00tgivn.ygcj458c.g00tgivn.ygcj525b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpigeon-shop%2F1032018%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fpigeon-shop%2Fi%2F10002137%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00tgivn.ygcj458c.g00tgivn.ygcj525b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpigeon-shop%2F1032018%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fpigeon-shop%2Fi%2F10002137%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored" data-price="12870" data-checked-at="">
   <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/pigeon-shop/cabinet/thumb/thumb4/1032018_270717.jpg?_ex=128x128" alt="" loading="lazy">
   <div class="body">
     <div class="top">
@@ -396,11 +563,12 @@
       <span class="badge rakuten">楽天市場</span>
     </div>
     <div class="title">【楽天お買い物マラソン限定価格！】電動鼻吸い器　シュポット | 0ヵ月頃〜 風邪予防・体温計・衛生商品 ピジョン 鼻水 吸引 吸引器 電動 鼻水吸引器 鼻水吸い 鼻水吸い器 電動鼻水吸引器 鼻吸い 鼻吸い器 赤ちゃん 赤ちゃん用品 赤ちゃんグッズ SHUPOT</div>
+    <div class="review">★4.7<span class="count">(2,218件)</span></div>
     <div class="price">¥12,870</div>
   </div>
 </a>
 
-<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00twban.ygcj43e4.g00twban.ygcj5232/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwagaku0204%2F10000009%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fwagaku0204%2Fi%2F10000009%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00twban.ygcj43e4.g00twban.ygcj5232/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwagaku0204%2F10000009%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fwagaku0204%2Fi%2F10000009%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored" data-price="2380" data-checked-at="">
   <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/wagaku0204/cabinet/08870368/10398488/10487811/imgrc0116344846.jpg?_ex=128x128" alt="" loading="lazy">
   <div class="body">
     <div class="top">
@@ -408,11 +576,12 @@
       <span class="badge rakuten">楽天市場</span>
     </div>
     <div class="title">【アフターセール！全品ポイント5倍】 おくるみ スワドル 秋 冬 スリーパー 新生児 モロー反射 夜泣き対策 ベビー用品 出産祝い ギフト プレゼント 安眠 男の子 女の子 夏 春 通年 送料無料</div>
+    <div class="review">★4.5<span class="count">(2,172件)</span></div>
     <div class="price">¥2,380</div>
   </div>
 </a>
 
-<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00tgivn.ygcj458c.g00tgivn.ygcj525b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpigeon-shop%2F2000320s%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fpigeon-shop%2Fi%2F10001898%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00tgivn.ygcj458c.g00tgivn.ygcj525b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpigeon-shop%2F2000320s%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fpigeon-shop%2Fi%2F10001898%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored" data-price="4998" data-checked-at="">
   <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/pigeon-shop/cabinet/thumb/thumb2/2000320s.jpg?_ex=128x128" alt="" loading="lazy">
   <div class="body">
     <div class="top">
@@ -420,11 +589,12 @@
       <span class="badge rakuten">楽天市場</span>
     </div>
     <div class="title">【セット割】ベビー麦茶500ml ラベルレス 24本×2ケース|1ヵ月頃〜 ピジョン 赤ちゃん 赤ちゃん用 赤ちゃん用品 ベビー ベビー用品 ベビー飲料 飲料 ペットボトル 飲み物 セット ノンカフェイン あかちゃん 赤ちゃんグッズ ペットボトル飲料 麦茶 お茶</div>
+    <div class="review">★4.9<span class="count">(2,160件)</span></div>
     <div class="price">¥4,998</div>
   </div>
 </a>
 
-<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00qlu0n.ygcj489b.g00qlu0n.ygcj50dd/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbaby-arte%2Fok-7%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fbaby-arte%2Fi%2F10000008%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00qlu0n.ygcj489b.g00qlu0n.ygcj50dd/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbaby-arte%2Fok-7%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fbaby-arte%2Fi%2F10000008%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored" data-price="5000" data-checked-at="">
   <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/baby-arte/cabinet/gift2032yoko/ok-7_260430_1.jpg?_ex=128x128" alt="" loading="lazy">
   <div class="body">
     <div class="top">
@@ -432,11 +602,12 @@
       <span class="badge rakuten">楽天市場</span>
     </div>
     <div class="title">出産祝い おむつケーキ 男の子 女の子 ミキハウス mikihouse ソックス タオル 赤ちゃん ベビー かわいい おしゃれ ギフト 名入れ オムツケーキ 今治 日本製 ベビーシャワー 5000円 実用的 送料無料 ベビー用品 プレゼント</div>
+    <div class="review">★4.7<span class="count">(2,123件)</span></div>
     <div class="price">¥5,000</div>
   </div>
 </a>
 
-<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00txfwn.ygcj4a58.g00txfwn.ygcj513e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flarutan%2Fn100%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Flarutan%2Fi%2F10000136%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00txfwn.ygcj4a58.g00txfwn.ygcj513e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flarutan%2Fn100%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Flarutan%2Fi%2F10000136%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored" data-price="14850" data-checked-at="">
   <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/larutan/cabinet/larutan/n100-r/n100-search-image/n100-a1-top.jpg?_ex=128x128" alt="" loading="lazy">
   <div class="body">
     <div class="top">
@@ -444,11 +615,12 @@
       <span class="badge rakuten">楽天市場</span>
     </div>
     <div class="title">高評価★楽天1位14冠★＼5種から選べるレビュー特典／＜芸能人愛用＞助産師推薦 哺乳瓶除菌乾燥機 哺乳瓶 除菌 乾燥 除菌乾燥機 乾燥器 哺乳びん 大容量 空焚き防止 ベビー ベビー用品 赤ちゃん 子育て 双子 育児 新生児 出産祝い 出産準備 時短 静か プレゼント ギフト</div>
+    <div class="review">★4.6<span class="count">(1,927件)</span></div>
     <div class="price">¥14,850</div>
   </div>
 </a>
 
-<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00qjjen.ygcj4b86.g00qjjen.ygcj5047/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fecoidea%2Fmp2_sale_120603%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fecoidea%2Fi%2F10000241%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00qjjen.ygcj4b86.g00qjjen.ygcj5047/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fecoidea%2Fmp2_sale_120603%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fecoidea%2Fi%2F10000241%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored" data-price="2580" data-checked-at="">
   <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/ecoidea/cabinet/items/andeco/mizupika/thumb_mzpk2l300ml.jpg?_ex=128x128" alt="" loading="lazy">
   <div class="body">
     <div class="top">
@@ -456,11 +628,12 @@
       <span class="badge rakuten">楽天市場</span>
     </div>
     <div class="title">【ポイント10倍 8/11 1:59まで】pH13.2 アルカリ電解水クリーナー 水ピカ 2L + 300ml スプレーボトル セット 楽天ランキング333週1位 洗剤 掃除 除菌 消臭 コンロ 油汚れ フローリング 壁紙 タバコ ヤニ落とし 詰め替え 大容量 重曹 クエン酸 スチームクリーナー 洗剤</div>
+    <div class="review">★4.5<span class="count">(1,892件)</span></div>
     <div class="price">¥2,580</div>
   </div>
 </a>
 
-<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00pv4jn.ygcj4f39.g00pv4jn.ygcj53a9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flecdirect%2Fe241_999naga15p%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Flecdirect%2Fi%2F10001751%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00pv4jn.ygcj4f39.g00pv4jn.ygcj53a9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flecdirect%2Fe241_999naga15p%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Flecdirect%2Fi%2F10001751%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored" data-price="2330" data-checked-at="">
   <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/lecdirect/cabinet/img/e/e00975-2.jpg?_ex=128x128" alt="" loading="lazy">
   <div class="body">
     <div class="top">
@@ -468,11 +641,12 @@
       <span class="badge rakuten">楽天市場</span>
     </div>
     <div class="title">おしり拭き おしりふき まとめ買い 水99.9 流せる シート【送料無料】60枚×15個【900枚】【肌にやさしい】お尻拭き お尻ふき 厚手 赤ちゃん ベビー ベビー用品 レックダイレクト レック ダイレクト</div>
+    <div class="review">★4.4<span class="count">(1,655件)</span></div>
     <div class="price">¥2,330</div>
   </div>
 </a>
 
-<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00tzgbn.ygcj4c24.g00tzgbn.ygcj5c0b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftcol%2Fclhp%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Ftcol%2Fi%2F10000002%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00tzgbn.ygcj4c24.g00tzgbn.ygcj5c0b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftcol%2Fclhp%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Ftcol%2Fi%2F10000002%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored" data-price="3379" data-checked-at="">
   <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/tcol/cabinet/img/test/20230323_2.jpg?_ex=128x128" alt="" loading="lazy">
   <div class="body">
     <div class="top">
@@ -480,32 +654,86 @@
       <span class="badge rakuten">楽天市場</span>
     </div>
     <div class="title">【楽天4冠】ヒップシート 抱っこ紐 【保育士&amp;小児科医W推薦】 補助ベルト有り 肩紐有り 抱っこひも キャリア ウエストポーチ ベビーキャリア 軽量 コンパクト 20kgまで Lauce(ラウチェ) オムツ お尻拭き ベビー用品 収納ポケット 赤ちゃん ギフト 【送料無料】</div>
+    <div class="review">★4.4<span class="count">(1,602件)</span></div>
     <div class="price">¥3,379</div>
   </div>
 </a>
 
 </div>
+<button type="button" class="load-more" id="load-more" style="display:none;">もっと見る</button>
 <p class="empty" id="no-results" style="display:none;">該当する商品が見つかりませんでした。</p>
 <p class="pr-note">本ページのリンクには一部アフィリエイトリンクが含まれます(#PR)。価格・在庫状況は変動する場合があります。</p>
+<footer class="site-footer">
+<a href="about.html">運営者情報</a>|<a href="privacy.html">プライバシーポリシー</a>
+</footer>
 </div>
 <script>
 (function () {
   var input = document.getElementById('search-box');
-  var cards = Array.prototype.slice.call(document.querySelectorAll('#product-list .card'));
+  var sortSelect = document.getElementById('sort-select');
+  var priceMin = document.getElementById('price-min');
+  var priceMax = document.getElementById('price-max');
+  var list = document.getElementById('product-list');
+  var cards = Array.prototype.slice.call(list.querySelectorAll('.card'));
   var noResults = document.getElementById('no-results');
   var countEl = document.getElementById('search-count');
-  if (!input || cards.length === 0) return;
-  input.addEventListener('input', function () {
+  var loadMoreBtn = document.getElementById('load-more');
+  var PAGE_SIZE = 60;
+  var visibleLimit = PAGE_SIZE;
+  if (cards.length === 0) return;
+
+  function applyFilters() {
     var q = input.value.trim().toLowerCase();
-    var visible = 0;
-    cards.forEach(function (card) {
-      var match = !q || card.textContent.toLowerCase().indexOf(q) !== -1;
-      card.style.display = match ? '' : 'none';
-      if (match) visible++;
+    var min = priceMin.value ? parseInt(priceMin.value, 10) : null;
+    var max = priceMax.value ? parseInt(priceMax.value, 10) : null;
+    var filtering = !!q || min !== null || max !== null;
+
+    var matched = cards.filter(function (card) {
+      var price = parseInt(card.getAttribute('data-price'), 10);
+      if (q && card.textContent.toLowerCase().indexOf(q) === -1) return false;
+      if (min !== null && (isNaN(price) || price < min)) return false;
+      if (max !== null && (isNaN(price) || price > max)) return false;
+      return true;
     });
-    noResults.style.display = visible === 0 ? '' : 'none';
-    countEl.textContent = q ? (visible + '件ヒット') : '';
+
+    var limit = filtering ? matched.length : visibleLimit;
+    var shown = 0;
+    cards.forEach(function (card) { card.style.display = 'none'; });
+    matched.slice(0, limit).forEach(function (card) {
+      card.style.display = '';
+      shown++;
+    });
+
+    noResults.style.display = shown === 0 ? '' : 'none';
+    countEl.textContent = filtering ? (shown + '件表示中(全' + matched.length + '件中)') : '';
+    loadMoreBtn.style.display = (!filtering && matched.length > limit) ? '' : 'none';
+  }
+
+  function applySort() {
+    var mode = sortSelect.value;
+    var sorted = cards.slice();
+    if (mode === 'price-asc') {
+      sorted.sort(function (a, b) { return (parseInt(a.getAttribute('data-price'), 10) || 0) - (parseInt(b.getAttribute('data-price'), 10) || 0); });
+    } else if (mode === 'price-desc') {
+      sorted.sort(function (a, b) { return (parseInt(b.getAttribute('data-price'), 10) || 0) - (parseInt(a.getAttribute('data-price'), 10) || 0); });
+    } else {
+      sorted.sort(function (a, b) { return (b.getAttribute('data-checked-at') || '').localeCompare(a.getAttribute('data-checked-at') || ''); });
+    }
+    sorted.forEach(function (card) { list.appendChild(card); });
+    cards = sorted;
+    applyFilters();
+  }
+
+  input.addEventListener('input', applyFilters);
+  priceMin.addEventListener('input', applyFilters);
+  priceMax.addEventListener('input', applyFilters);
+  sortSelect.addEventListener('change', applySort);
+  loadMoreBtn.addEventListener('click', function () {
+    visibleLimit += PAGE_SIZE;
+    applyFilters();
   });
+
+  applyFilters();
 })();
 </script>
 </body>
