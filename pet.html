@@ -17,7 +17,7 @@
     color: #222;
   }
   a { color: inherit; }
-  .wrap { max-width: 640px; margin: 0 auto; }
+  .wrap { max-width: 1200px; margin: 0 auto; }
   h1 {
     color: #fff;
     -webkit-text-stroke: 1px #000;
@@ -55,26 +55,30 @@
     font-weight: 800;
   }
   .updated { text-align: center; font-size: 0.75rem; margin-bottom: 24px; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,0.25); }
+  #product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 16px;
+  }
   .card {
     display: flex;
-    gap: 12px;
+    flex-direction: column;
     background: #fff;
     border-radius: 12px;
-    padding: 12px 16px;
-    margin-bottom: 10px;
+    padding: 12px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.08);
     text-decoration: none;
   }
   .card img {
-    width: 72px;
-    height: 72px;
-    object-fit: cover;
+    width: 100%;
+    height: 190px;
+    object-fit: contain;
     border-radius: 8px;
-    flex-shrink: 0;
-    background: #eee;
+    background: #f5f5f5;
+    margin-bottom: 10px;
   }
-  .card .body { min-width: 0; flex: 1; }
-  .card .top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+  .card .body { min-width: 0; flex: 1; display: flex; flex-direction: column; }
+  .card .top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
   .card .brand { font-size: 0.75rem; color: #888; font-weight: 600; }
   .badge {
     font-size: 0.68rem;
@@ -87,7 +91,16 @@
   .badge.rakuten { background: #ffe4e4; color: #bf1e2e; }
   .badge.qoo10 { background: #e4edff; color: #1e4dbf; }
   .badge.yahoo { background: #fff0d6; color: #b45f00; }
-  .card .title { font-size: 0.95rem; line-height: 1.5; margin: 6px 0; }
+  .card .title {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 6px 0;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
   .card .price { font-size: 1.05rem; font-weight: 700; }
   .empty { text-align: center; color: #fff; padding: 48px 0; background: rgba(255,255,255,0.15); border-radius: 12px; }
   .pr-note {
@@ -124,10 +137,16 @@
     box-shadow: 0 2px 10px rgba(0,0,0,0.12);
     text-decoration: none;
   }
-  .genre-list { list-style: none; padding: 0; }
-  .genre-list li { margin-bottom: 12px; }
+  .genre-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+  }
   .genre-list a {
     display: block;
+    height: 100%;
     background: #fff;
     border-radius: 12px;
     padding: 16px;
@@ -167,7 +186,7 @@
     box-shadow: 0 6px 18px rgba(0,0,0,0.22);
     border: 2px solid rgba(255,255,255,0.7);
   }
-  .pickup-card img { width: 100%; height: 120px; object-fit: cover; border-radius: 10px; margin-bottom: 8px; background: #eee; }
+  .pickup-card img { width: 100%; height: 120px; object-fit: contain; border-radius: 10px; margin-bottom: 8px; background: #f5f5f5; }
   .pickup-badge {
     display: inline-block;
     background: linear-gradient(90deg, #ff5f6d, #ffa53d);
@@ -213,7 +232,7 @@
 <a class="back-link" href="index.html">&larr; ジャンル一覧に戻る</a>
 <h1>ペット用品</h1>
 <p class="subtitle"><span class="subtitle-text">「ペット用品」の商品一覧(全20件)</span></p>
-<p class="updated">最終更新: 2026-08-11 21:27</p>
+<p class="updated">最終更新: 2026-08-11 21:35</p>
 <input type="search" class="search-box" id="search-box" placeholder="商品名・ブランド名で絞り込み" autocomplete="off">
 <p class="search-count" id="search-count"></p>
 <div id="product-list">
