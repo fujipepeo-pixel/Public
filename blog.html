@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="「アウトドア用品」の商品一覧。Qoo10・楽天市場の在庫あり商品0件を掲載。">
-<title>アウトドア用品</title>
+<meta name="description" content="ワクワク！！発掘アイランドのブログ。選び方ガイドやセール・値下げ情報のまとめ記事を掲載しています。">
+<title>ブログ | ワクワク！！発掘アイランド</title>
 <style>
   :root { color-scheme: light; }
   * { box-sizing: border-box; }
@@ -343,110 +343,14 @@
 </head>
 <body>
 <div class="wrap">
-<a class="back-link" href="index.html">&larr; ジャンル一覧に戻る</a>
-<nav class="genre-nav">
-<a href="cosme.html">韓国コスメ</a>
-<a href="denki.html">家電</a>
-<a href="gaming.html">ゲーミングPC・周辺機器</a>
-<a href="kitchen.html">キッチン家電</a>
-<a href="baby.html">ベビー用品</a>
-<a href="pet.html">ペット用品</a>
-<a href="outdoor.html" class="current">アウトドア用品</a>
-<a href="sports.html">スポーツ用品</a>
-</nav>
-<h1>アウトドア用品</h1>
-<p class="subtitle"><span class="subtitle-text">「アウトドア用品」の商品一覧(全0件)</span></p>
-<p class="updated">最終更新: 2026-08-11 22:45</p>
-<p class="genre-intro">キャンプ・アウトドア用品の在庫あり商品をまとめています。</p>
-<div class="toolbar">
-<input type="search" class="search-box" id="search-box" placeholder="商品名・ブランド名で絞り込み" autocomplete="off">
-<select id="sort-select">
-  <option value="recent">新着順</option>
-  <option value="price-asc">価格が安い順</option>
-  <option value="price-desc">価格が高い順</option>
-</select>
-<input type="number" id="price-min" placeholder="最低価格" min="0">
-<input type="number" id="price-max" placeholder="最高価格" min="0">
+<a class="back-link" href="index.html">&larr; トップに戻る</a>
+<h1 style="font-size:1.8rem;">ブログ</h1>
+<div class="legal-content">
+<p>まだ記事がありません。</p>
 </div>
-<p class="search-count" id="search-count"></p>
-<div id="product-list">
-<p class="empty">現在、在庫確認済みの商品はありません。</p>
-</div>
-<button type="button" class="load-more" id="load-more" style="display:none;">もっと見る</button>
-<p class="empty" id="no-results" style="display:none;">該当する商品が見つかりませんでした。</p>
-<p class="pr-note">本ページのリンクには一部アフィリエイトリンクが含まれます(#PR)。価格・在庫状況は変動する場合があります。</p>
 <footer class="site-footer">
 <a href="blog.html">ブログ</a>|<a href="about.html">運営者情報</a>|<a href="privacy.html">プライバシーポリシー</a>
 </footer>
 </div>
-<script>
-(function () {
-  var input = document.getElementById('search-box');
-  var sortSelect = document.getElementById('sort-select');
-  var priceMin = document.getElementById('price-min');
-  var priceMax = document.getElementById('price-max');
-  var list = document.getElementById('product-list');
-  var cards = Array.prototype.slice.call(list.querySelectorAll('.card'));
-  var noResults = document.getElementById('no-results');
-  var countEl = document.getElementById('search-count');
-  var loadMoreBtn = document.getElementById('load-more');
-  var PAGE_SIZE = 60;
-  var visibleLimit = PAGE_SIZE;
-  if (cards.length === 0) return;
-
-  function applyFilters() {
-    var q = input.value.trim().toLowerCase();
-    var min = priceMin.value ? parseInt(priceMin.value, 10) : null;
-    var max = priceMax.value ? parseInt(priceMax.value, 10) : null;
-    var filtering = !!q || min !== null || max !== null;
-
-    var matched = cards.filter(function (card) {
-      var price = parseInt(card.getAttribute('data-price'), 10);
-      if (q && card.textContent.toLowerCase().indexOf(q) === -1) return false;
-      if (min !== null && (isNaN(price) || price < min)) return false;
-      if (max !== null && (isNaN(price) || price > max)) return false;
-      return true;
-    });
-
-    var limit = filtering ? matched.length : visibleLimit;
-    var shown = 0;
-    cards.forEach(function (card) { card.style.display = 'none'; });
-    matched.slice(0, limit).forEach(function (card) {
-      card.style.display = '';
-      shown++;
-    });
-
-    noResults.style.display = shown === 0 ? '' : 'none';
-    countEl.textContent = filtering ? (shown + '件表示中(全' + matched.length + '件中)') : '';
-    loadMoreBtn.style.display = (!filtering && matched.length > limit) ? '' : 'none';
-  }
-
-  function applySort() {
-    var mode = sortSelect.value;
-    var sorted = cards.slice();
-    if (mode === 'price-asc') {
-      sorted.sort(function (a, b) { return (parseInt(a.getAttribute('data-price'), 10) || 0) - (parseInt(b.getAttribute('data-price'), 10) || 0); });
-    } else if (mode === 'price-desc') {
-      sorted.sort(function (a, b) { return (parseInt(b.getAttribute('data-price'), 10) || 0) - (parseInt(a.getAttribute('data-price'), 10) || 0); });
-    } else {
-      sorted.sort(function (a, b) { return (b.getAttribute('data-checked-at') || '').localeCompare(a.getAttribute('data-checked-at') || ''); });
-    }
-    sorted.forEach(function (card) { list.appendChild(card); });
-    cards = sorted;
-    applyFilters();
-  }
-
-  input.addEventListener('input', applyFilters);
-  priceMin.addEventListener('input', applyFilters);
-  priceMax.addEventListener('input', applyFilters);
-  sortSelect.addEventListener('change', applySort);
-  loadMoreBtn.addEventListener('click', function () {
-    visibleLimit += PAGE_SIZE;
-    applyFilters();
-  });
-
-  applyFilters();
-})();
-</script>
 </body>
 </html>
