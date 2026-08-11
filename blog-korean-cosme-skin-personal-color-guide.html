@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="韓国コスメを選ぶ際に押さえておきたい、肌質別・パーソナルカラー別のチェックポイントをまとめました。成分や仕上がりの好みまで、失敗しにくい選び方の基本を解説します。">
+<title>韓国コスメの選び方 肌質・パーソナルカラー別ガイド | ワクワク！！発掘アイランド</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 24px 16px 64px;
+    background: linear-gradient(135deg, #ff5f6d, #ffc371, #f9f871, #6fe3a0, #4fd0e9, #6a8dff, #b06ae0);
+    background-attachment: fixed;
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+    color: #222;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1200px; margin: 0 auto; }
+  h1 {
+    color: #fff;
+    -webkit-text-stroke: 1px #000;
+    text-stroke: 1px #000;
+    text-shadow:
+      -1px -1px 0 #000, 0 -1px 0 #000, 1px -1px 0 #000,
+      -1px 0 0 #000, 1px 0 0 #000,
+      -1px 1px 0 #000, 0 1px 0 #000, 1px 1px 0 #000,
+      0 3px 5px rgba(0,0,0,0.3);
+  }
+  h1 { font-size: 2.5rem; font-weight: 800; text-align: center; margin: 0 0 8px; }
+  .subtitle {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto 24px;
+    padding: 10px 22px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.4;
+    background: rgba(255,255,255,0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.55);
+    border-radius: 999px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  }
+  .subtitle-text {
+    background: linear-gradient(90deg, #ff5f6d, #ffa53d, #f4d03f, #2ecc71, #3498db, #9b59b6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 800;
+  }
+  .updated { text-align: center; font-size: 0.75rem; margin-bottom: 24px; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,0.25); }
+  #product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 16px;
+  }
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    text-decoration: none;
+  }
+  .card img {
+    width: 100%;
+    height: 190px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #f5f5f5;
+    margin-bottom: 10px;
+  }
+  .card .body { min-width: 0; flex: 1; display: flex; flex-direction: column; }
+  .card .top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .card .brand { font-size: 0.75rem; color: #888; font-weight: 600; }
+  .badge {
+    font-size: 0.68rem;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: #eee;
+    color: #555;
+    white-space: nowrap;
+  }
+  .badge.rakuten { background: #ffe4e4; color: #bf1e2e; }
+  .badge.qoo10 { background: #e4edff; color: #1e4dbf; }
+  .badge.yahoo { background: #fff0d6; color: #b45f00; }
+  .event-badge {
+    position: absolute;
+    top: -8px;
+    left: 8px;
+    background: linear-gradient(90deg, #ff5f6d, #ff9f43);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 999px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  }
+  .card .title {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 6px 0;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .card .review { font-size: 0.75rem; color: #e8a400; margin-bottom: 2px; }
+  .card .review .count { color: #999; margin-left: 4px; }
+  .card .price { font-size: 1.05rem; font-weight: 700; }
+  .empty { text-align: center; color: #fff; padding: 48px 0; background: rgba(255,255,255,0.15); border-radius: 12px; }
+  .pr-note {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 32px auto 0;
+    padding: 8px 16px;
+    text-align: center;
+    font-size: 0.72rem;
+    color: #333;
+    background: rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 999px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+  }
+  .back-link {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto 24px;
+    padding: 8px 18px;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #222;
+    background: rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 999px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+    text-decoration: none;
+  }
+  .genre-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+  }
+  .genre-list a {
+    display: block;
+    height: 100%;
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    text-decoration: none;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  }
+  .genre-list .genre-title { font-size: 1rem; font-weight: 700; }
+  .genre-list .genre-count { font-size: 0.8rem; color: #888; margin-top: 4px; }
+  .pickup-section { margin-bottom: 28px; }
+  .pickup-heading {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 14px;
+    padding: 6px 22px;
+    text-align: center;
+    background: rgba(255,255,255,0.85);
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 999px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  }
+  .pickup-heading-text {
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    background: linear-gradient(90deg, #ff5f6d, #ffa53d, #f4d03f, #2ecc71, #3498db, #9b59b6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .pickup-scroll {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 4px 2px 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .pickup-card {
+    flex: 0 0 160px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 16px;
+    padding: 10px;
+    text-decoration: none;
+    color: #222;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.22);
+    border: 2px solid rgba(255,255,255,0.7);
+  }
+  .pickup-card img { width: 100%; height: 120px; object-fit: contain; border-radius: 10px; margin-bottom: 8px; background: #f5f5f5; }
+  .pickup-badge {
+    display: inline-block;
+    background: linear-gradient(90deg, #ff5f6d, #ffa53d);
+    color: #fff;
+    font-size: 0.62rem;
+    font-weight: 800;
+    padding: 2px 9px;
+    border-radius: 999px;
+    margin-bottom: 6px;
+  }
+  .pickup-genre { font-size: 0.68rem; color: #888; margin-bottom: 2px; }
+  .pickup-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 2px 0 6px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .pickup-price { font-size: 1.05rem; font-weight: 800; color: #e0245e; }
+  .search-box {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto 20px;
+    padding: 12px 18px;
+    font-size: 1rem;
+    color: #222;
+    background: rgba(255,255,255,0.85);
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 999px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    outline: none;
+  }
+  .search-box::placeholder { color: #888; }
+  .search-count { text-align: center; font-size: 0.8rem; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,0.25); margin-bottom: 16px; }
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+  .toolbar select, .toolbar input[type="number"] {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    color: #222;
+    background: rgba(255,255,255,0.85);
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 999px;
+    outline: none;
+  }
+  .toolbar input[type="number"] { width: 110px; }
+  .load-more {
+    display: block;
+    margin: 20px auto 0;
+    padding: 12px 32px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #222;
+    background: rgba(255,255,255,0.85);
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 999px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    cursor: pointer;
+  }
+  .genre-nav {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 4px 2px 16px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .genre-nav a {
+    flex: 0 0 auto;
+    padding: 6px 14px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #222;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 999px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .genre-nav a.current { background: rgba(255,255,255,0.95); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+  .genre-intro {
+    background: rgba(255,255,255,0.75);
+    border-radius: 12px;
+    padding: 14px 18px;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  .ranking-section { margin-bottom: 24px; }
+  .rank-card { position: relative; }
+  .rank-number {
+    position: absolute;
+    top: -10px;
+    left: -6px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ffd76a, #ff9f43);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 800;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  }
+  .site-footer { text-align: center; margin-top: 40px; font-size: 0.75rem; }
+  .site-footer a { color: #fff; text-decoration: underline; margin: 0 8px; text-shadow: 0 1px 3px rgba(0,0,0,0.25); }
+  .legal-content {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 16px;
+    padding: 28px 30px;
+    font-size: 0.92rem;
+    line-height: 1.9;
+    color: #333;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+  .legal-content h2 {
+    font-size: 1.05rem;
+    margin: 28px 0 10px;
+    padding-left: 12px;
+    border-left: 4px solid #ff9f43;
+    color: #222;
+  }
+  .legal-content h2:first-child { margin-top: 0; }
+  .legal-content ul { margin: 4px 0; padding-left: 1.4em; }
+  .legal-content p { margin: 0 0 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="back-link" href="blog.html">&larr; ブログ一覧に戻る</a>
+<h1 style="font-size:1.6rem;">韓国コスメの選び方 肌質・パーソナルカラー別ガイド</h1>
+<p class="updated">公開日: 2026-08-11</p>
+<div class="legal-content">
+<h2>🧴 韓国コスメが人気を集めている理由</h2><p>ここ数年、ドラッグストアやオンラインショップで韓国コスメを見かける機会がぐっと増えました。プチプラながらパッケージが可愛らしく、トレンドの反映も早いことから、幅広い年代に支持されています。ただ、種類が多いぶん「結局どれを選べばいいのか分からない」という声もよく聞きます。この記事では、肌質とパーソナルカラーという2つの軸から、選び方の基本を整理してみます。</p><h2>💧 肌質別に見る基礎化粧品の選び方</h2><p>スキンケアを選ぶうえで、まず基準になるのが自分の肌質です。乾燥しやすいタイプなら、セラミドやヒアルロン酸配合のとろみのあるテクスチャーが向いています。逆に皮脂の分泌が多いタイプは、さらっとしたジェルタイプや、ナイアシンアミドなど皮脂バランスを整える成分を含むアイテムのほうが使いやすいでしょう。</p><p>敏感肌の場合は、香料やアルコールの有無を確認しておくと安心です。韓国コスメには「低刺激」を前面に押した製品ラインも多く存在しますが、パッケージの表示だけで判断せず、成分表示までひと通り目を通す習慣をつけておくと失敗が減ります。季節によって肌の状態は変わりやすいので、夏場は皮脂対策を重視し、冬場は保湿を厚めにするなど、同じ肌質でも時期によって使い分ける発想を持っておくと安心です。</p><ul><li>乾燥肌:セラミド、ヒアルロン酸、油分を含む保湿クリーム系</li><li>脂性肌:ナイアシンアミド、BHA配合のさっぱり系アイテム</li><li>敏感肌:低刺激処方、無香料・パッチテスト表記のあるもの</li><li>混合肌:部位ごとにアイテムを使い分ける発想も有効</li></ul><h2>🎨 パーソナルカラーで考えるベースメイク・リップ選び</h2><p>スキンケア以上に悩みやすいのが、色味を選ぶベースメイクやリップではないでしょうか。パーソナルカラーは大きく「イエベ(イエローベース)」と「ブルベ(ブルーベース)」に分かれ、さらに春夏秋冬の4タイプに細分化されます。</p><p>イエベの方は、オレンジやコーラル系、暖かみのあるベージュが肌になじみやすい傾向があります。一方ブルベの方は、ピンクやローズ系、青みを感じるレッドとの相性が良いとされています。もちろんこれは大まかな傾向で、実際は肌トーンや好みによって印象が変わるため、あくまで目安として捉えておくのがよさそうです。</p><p>ファンデーションについても同様で、韓国コスメは全体的にピンクよりのトーンが多い印象がありますが、ブランドによって差があります。可能であればタッチアップや色比較の画像を確認し、自分の首元の色と近いものを選ぶと失敗しにくくなります。また、同じ製品名でも展開されるカラー数がブランドごとに異なるため、選択肢が少ない場合は色選び自体を慎重に行う必要があります。オンライン購入の場合は、実店舗での色比較レビューを参考にするのも一つの方法です。</p><h2>✨ テクスチャーと仕上がりの好みも大事な判断軸</h2><p>肌質やパーソナルカラーだけでなく、仕上がりの好みも選び方に関わってきます。韓国コスメには「ツヤ肌」を意識したグロッシーな質感のアイテムが多く見られますが、マットな仕上がりを好む方には合わないこともあります。皮脂が気になる部分にはツヤが強く出すぎることもあるため、混合肌の方はTゾーンと頬で仕上がりの好みが分かれることも意識しておくとよいでしょう。</p><p>クッションファンデやティントリップなど、韓国発のアイテムには独自のカテゴリも多いので、まずは口コミやレビューで質感の傾向を掴んでから選ぶと、イメージとのギャップを減らせます。ティントリップは色持ちの良さが魅力ですが、乾燥しやすい唇には保湿力のあるタイプを選ぶなど、質感と自分の肌・唇の状態を合わせて考える視点も大切です。</p><h2>🌸 季節や気候による使い分けのヒント</h2><p>韓国コスメを選ぶ際は、季節や気候の変化も意外と大きな要素になります。湿度の高い夏場は、皮脂崩れやテカリが気になりやすいため、皮脂吸着効果のあるパウダーや、崩れにくさを訴求したロングウェアタイプのファンデーションが選ばれやすくなります。反対に空気が乾燥する冬場は、粉っぽさが出やすいパウダー系よりも、うるおいを保てるクリームタイプやクッションファンデが合いやすい季節です。</p><p>また花粉やマスク生活など、肌への刺激要因が多い時期は、いつも使っている製品でも一時的に肌が敏感になることがあります。そうした時期は低刺激処方のアイテムに切り替えたり、使用アイテムの数を減らしたりするなど、季節ごとの肌状態に合わせて柔軟に対応する姿勢が、結果的にトラブルの予防につながります。</p><h2>📦 購入前に確認しておきたいポイント</h2><p>気になるアイテムを見つけたら、購入前にいくつか確認しておきたい点があります。</p><ul><li>成分表示(アレルギーやアルコール過敏の有無)</li><li>容量と価格のバランス(ミニサイズがあるかどうか)</li><li>使用期限や開封後の使用推奨期間</li><li>レビューの傾向(良い点だけでなく気になる点も含めて)</li></ul><p>特に初めて使うブランドの場合は、フルサイズより先にミニサイズやサンプルで試すという選択肢も検討してみてください。肌との相性は個人差が大きいため、いきなり大容量を購入するより、段階的に試すほうが結果的に無駄が少なくなることが多いです。並行輸入品や個人輸入の商品を購入する場合は、正規品かどうかの確認や、日本語の成分表示があるかどうかも合わせて確認しておくと、より安心して使うことができます。</p><h2>🔍 まとめ:自分の肌と好みに合わせた選び方を</h2><p>韓国コスメは選択肢が豊富な分、情報収集も選び方の一部になります。肌質、パーソナルカラー、仕上がりの好み、そして季節による変化という4つの軸を意識しておくと、数多くの商品の中から自分に合いそうなものを絞り込みやすくなるはずです。トレンドを楽しみつつ、自分の肌にとって心地よいアイテムを見つけていってください。</p>
+</div>
+<div class="pickup-section">
+<p class="pickup-heading"><span class="pickup-heading-text">韓国コスメの今の在庫から</span></p>
+<div class="pickup-scroll">
+<a class="pickup-card" href="https://hb.afl.rakuten.co.jp/hgc/g00tzfxn.ygcj4edb.g00tzfxn.ygcj597e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftirtir%2F444-468_1%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Ftirtir%2Fi%2F10000155%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/tirtir/cabinet/12135243/13091448/imgrc0128447061.jpg?_ex=128x128" alt="" loading="lazy">
+  <span class="pickup-badge">PR</span>
+  <div class="pickup-genre">韓国コスメ</div>
+  <div class="pickup-name">【TIRTIR公式】 マスクフィットクッション ルビーメッシュ AI レッド クリスタルメッシュ 本品 18g, 15g クッションファンデ ファンデーション カバー力 ハイカバー 毛穴カバー ツヤ肌 崩れにくい 薄づき 韓国コスメ ティルティル</div>
+  <div class="pickup-price">¥2,376</div>
+</a>
+
+<a class="pickup-card" href="https://hb.afl.rakuten.co.jp/hgc/g00u6mzn.ygcj44bc.g00u6mzn.ygcj5131/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanuajapan%2Fanua00023%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fanuajapan%2Fi%2F10000021%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/anuajapan/cabinet/anua00023/anua00023_renew/toner_new_mainthumb.jpg?_ex=128x128" alt="" loading="lazy">
+  <span class="pickup-badge">PR</span>
+  <div class="pickup-genre">韓国コスメ</div>
+  <div class="pickup-name">＼ドクダミリニューアル新発売／【Anua公式】【自然由来トナー単品 250ml（全4種）】ドクダミ 桃 ライス シラカバ 化粧水 ローション 輸液 美容液 ニキビ 皮脂 肌キメ 韓国コスメ アヌア</div>
+  <div class="pickup-price">¥2,800</div>
+</a>
+
+<a class="pickup-card" href="https://hb.afl.rakuten.co.jp/hgc/g00ti5vn.ygcj4350.g00ti5vn.ygcj53e5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fasiabnc%2Fbrowcara%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fasiabnc%2Fi%2F10000243%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/asiabnc/cabinet/13655924/13695011/1.jpg?_ex=128x128" alt="" loading="lazy">
+  <span class="pickup-badge">PR</span>
+  <div class="pickup-genre">韓国コスメ</div>
+  <div class="pickup-name">＼3,500円以上注文でランダム現品プレゼント／【ロムアンド公式】ハンオールブロウカラ rom&amp;nd official romand HAN ALL BROW CARA ロムアンド ブロウカラ 眉マスカラ アイブロウ 眉毛マスカラ 落ちにくい 塗りやすい 自然なまつ毛 韓国コスメ ロムアンド公式ショップ</div>
+  <div class="pickup-price">¥1,210</div>
+</a>
+
+</div>
+</div>
+<p><a class="back-link" href="cosme.html">韓国コスメの在庫一覧を見る &rarr;</a></p>
+<p class="pr-note">本ページのリンクには一部アフィリエイトリンクが含まれます(#PR)。</p>
+<footer class="site-footer">
+<a href="blog.html">ブログ</a>|<a href="about.html">運営者情報</a>|<a href="privacy.html">プライバシーポリシー</a>
+</footer>
+</div>
+</body>
+</html>
