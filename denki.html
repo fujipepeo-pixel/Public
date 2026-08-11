@@ -135,6 +135,22 @@
   }
   .genre-list .genre-title { font-size: 1rem; font-weight: 700; }
   .genre-list .genre-count { font-size: 0.8rem; color: #888; margin-top: 4px; }
+  .search-box {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto 20px;
+    padding: 12px 18px;
+    font-size: 1rem;
+    color: #222;
+    background: rgba(255,255,255,0.85);
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 999px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    outline: none;
+  }
+  .search-box::placeholder { color: #888; }
+  .search-count { text-align: center; font-size: 0.8rem; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,0.25); margin-bottom: 16px; }
 </style>
 </head>
 <body>
@@ -142,7 +158,10 @@
 <a class="back-link" href="index.html">&larr; ジャンル一覧に戻る</a>
 <h1>家電</h1>
 <p class="subtitle"><span class="subtitle-text">今すぐ買える家電の在庫一覧(全710件)</span></p>
-<p class="updated">最終更新: 2026-08-11 20:34</p>
+<p class="updated">最終更新: 2026-08-11 20:38</p>
+<input type="search" class="search-box" id="search-box" placeholder="商品名・ブランド名で絞り込み" autocomplete="off">
+<p class="search-count" id="search-count"></p>
+<div id="product-list">
 <a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00sr5an.ygcj4ad6.g00sr5an.ygcj5640/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Finsair%2F296091%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Finsair%2Fi%2F10051246%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
   <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/insair/cabinet/06008711/tenpo10/0116_296091.jpg?_ex=128x128" alt="" loading="lazy">
   <div class="body">
@@ -8663,7 +8682,29 @@
   </div>
 </a>
 
+</div>
+<p class="empty" id="no-results" style="display:none;">該当する商品が見つかりませんでした。</p>
 <p class="pr-note">本ページのリンクには一部アフィリエイトリンクが含まれます(#PR)。価格・在庫状況は変動する場合があります。</p>
 </div>
+<script>
+(function () {
+  var input = document.getElementById('search-box');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('#product-list .card'));
+  var noResults = document.getElementById('no-results');
+  var countEl = document.getElementById('search-count');
+  if (!input || cards.length === 0) return;
+  input.addEventListener('input', function () {
+    var q = input.value.trim().toLowerCase();
+    var visible = 0;
+    cards.forEach(function (card) {
+      var match = !q || card.textContent.toLowerCase().indexOf(q) !== -1;
+      card.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    noResults.style.display = visible === 0 ? '' : 'none';
+    countEl.textContent = q ? (visible + '件ヒット') : '';
+  });
+})();
+</script>
 </body>
 </html>
