@@ -6,6 +6,16 @@
 <meta name="description" content="忙しい朝でも無理なく朝食を作れるキッチン家電の選び方を、サイズ・機能・後片付けの観点から解説します。">
 <title>一人暮らしの朝食作りに役立つキッチン家電の選び方 | ワクワク！！発掘アイランド</title>
 <style>
+  @view-transition {
+    navigation: auto;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+      animation: none !important;
+    }
+  }
   :root { color-scheme: light; }
   * { box-sizing: border-box; }
   body {
@@ -412,18 +422,57 @@
     margin: 4px 0 20px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.18);
   }
+  .reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: linear-gradient(90deg, #ff5f6d, #ffa53d, #f4d03f, #2ecc71, #3498db, #9b59b6);
+    z-index: 999;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: scroll()) {
+      @keyframes growReadingProgress {
+        from { transform: scaleX(0); }
+        to { transform: scaleX(1); }
+      }
+      .reading-progress {
+        animation: growReadingProgress linear;
+        animation-timeline: scroll(root block);
+      }
+    }
+  }
   @media (prefers-reduced-motion: no-preference) {
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(14px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    #product-list .card,
-    .pickup-scroll .pickup-card,
-    .genre-list li > a {
-      animation: fadeInUp 0.5s ease both;
+    /* scroll-timeline未対応ブラウザ向けフォールバック: 読み込み時に一度だけフェードインする
+       (対応ブラウザでは下のanimation-timeline: view()版が使われ、こちらは@supports notで無効化される)。 */
+    @supports not (animation-timeline: view()) {
+      #product-list .card,
+      .pickup-scroll .pickup-card,
+      .genre-list li > a {
+        animation: fadeInUp 0.5s ease both;
+      }
+    }
+    /* scroll-timeline対応ブラウザ: スクロールでカードが画面に入ってくるたびに毎回ふわっと表示する
+       (JS不要・GPUアクセラレーション、2026年時点でChromiumが対応)。 */
+    @supports (animation-timeline: view()) {
+      #product-list .card,
+      .pickup-scroll .pickup-card,
+      .genre-list li > a {
+        animation: fadeInUp linear both;
+        animation-timeline: view();
+        animation-range: entry 0% cover 35%;
+      }
     }
   }
 @media (prefers-reduced-motion: no-preference) {
+@supports not (animation-timeline: view()) {
   #product-list .card:nth-child(1), .pickup-scroll .pickup-card:nth-child(1), .genre-list li:nth-child(1) > a { animation-delay: 0.045s; }
   #product-list .card:nth-child(2), .pickup-scroll .pickup-card:nth-child(2), .genre-list li:nth-child(2) > a { animation-delay: 0.090s; }
   #product-list .card:nth-child(3), .pickup-scroll .pickup-card:nth-child(3), .genre-list li:nth-child(3) > a { animation-delay: 0.135s; }
@@ -437,6 +486,7 @@
   #product-list .card:nth-child(11), .pickup-scroll .pickup-card:nth-child(11), .genre-list li:nth-child(11) > a { animation-delay: 0.495s; }
   #product-list .card:nth-child(12), .pickup-scroll .pickup-card:nth-child(12), .genre-list li:nth-child(12) > a { animation-delay: 0.540s; }
 }
+}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JZHB6QBWRQ"></script>
 <script>
@@ -447,6 +497,7 @@
 </script>
 </head>
 <body>
+<div class="reading-progress"></div>
 <div class="wrap">
 <a class="back-link" href="blog.html">&larr; ブログ一覧に戻る</a>
 <img class="blog-hero" src="blog-images/kitchen-breakfast-appliances.png" alt="一人暮らしの朝食作りに役立つキッチン家電の選び方のイメージ画像" loading="lazy">
