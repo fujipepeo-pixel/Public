@@ -90,7 +90,6 @@
     text-decoration: none;
     transition: transform 0.22s ease, box-shadow 0.22s ease;
   }
-  .card:hover { transform: translateY(-5px); box-shadow: 0 12px 26px rgba(0,0,0,0.16); }
   .card:active { transform: translateY(-2px); }
   .card img {
     width: 100%;
@@ -213,7 +212,6 @@
     box-shadow: 0 1px 4px rgba(0,0,0,0.08);
     transition: transform 0.22s ease, box-shadow 0.22s ease;
   }
-  .genre-list a:hover { transform: translateY(-5px); box-shadow: 0 12px 26px rgba(0,0,0,0.16); }
   .genre-list a:active { transform: translateY(-2px); }
   .genre-list .genre-title { font-size: 1rem; font-weight: 700; }
   .genre-list .genre-count { font-size: 0.8rem; color: #888; margin-top: 4px; }
@@ -259,7 +257,6 @@
     scroll-snap-align: start;
     transition: transform 0.22s ease, box-shadow 0.22s ease;
   }
-  .pickup-card:hover { transform: translateY(-5px); box-shadow: 0 14px 28px rgba(0,0,0,0.28); }
   .pickup-card:active { transform: translateY(-2px); }
   .pickup-card img { width: 100%; height: 120px; object-fit: contain; border-radius: 10px; margin-bottom: 8px; background: #f5f5f5; }
   .pickup-badge {
@@ -351,7 +348,6 @@
     white-space: nowrap;
     transition: background 0.2s ease, transform 0.2s ease;
   }
-  .genre-nav a:hover { background: rgba(255,255,255,0.85); transform: translateY(-2px); }
   .genre-nav a.current { background: rgba(255,255,255,0.95); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
   .genre-intro {
     background: rgba(255,255,255,0.75);
@@ -400,7 +396,6 @@
     background: currentColor;
     transition: right 0.25s ease;
   }
-  .site-footer a:hover::after { right: 0; }
   .legal-content {
     background: rgba(255,255,255,0.85);
     backdrop-filter: blur(14px);
@@ -496,6 +491,23 @@
   #product-list .card:nth-child(12), .pickup-scroll .pickup-card:nth-child(12), .genre-list li:nth-child(12) > a { animation-delay: 0.540s; }
 }
 }
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover { transform: translateY(-5px); box-shadow: 0 12px 26px rgba(0,0,0,0.16); }
+  .genre-list a:hover { transform: translateY(-5px); box-shadow: 0 12px 26px rgba(0,0,0,0.16); }
+  .pickup-card:hover { transform: translateY(-5px); box-shadow: 0 14px 28px rgba(0,0,0,0.28); }
+  .genre-nav a:hover { background: rgba(255,255,255,0.85); transform: translateY(-2px); }
+  .site-footer a:hover::after { right: 0; }
+}
+
+/* スマホ幅向けの微調整: 余白・タップ領域を確保する(明示的なモバイル用ブレークポイントが
+   これまで無かったため追加)。 */
+@media (max-width: 480px) {
+  body { padding: 16px 12px 48px; }
+  h1 { font-size: 2rem; }
+  .toolbar select, .toolbar input[type="number"] { padding: 12px 14px; }
+  .toolbar input[type="number"] { width: 46%; max-width: 140px; }
+}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JZHB6QBWRQ"></script>
 <script>
@@ -560,7 +572,7 @@
 <p class="pickup-heading"><span class="pickup-heading-text">この記事でおすすめしたいアイテム</span></p>
 <div class="pickup-scroll">
 <a class="pickup-card" href="https://hb.afl.rakuten.co.jp/hgc/g00uaejn.ygcj4d39.g00uaejn.ygcj5cf6/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fexception5251%2Fi-00004%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fexception5251%2Fi%2F10000042%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
-  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/exception5251/cabinet/11219683/11219687/main_image/i-00004.jpg?_ex=128x128" alt="" loading="lazy">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/exception5251/cabinet/11219683/11219687/main_image/i-00004.jpg?_ex=400x400" alt="" loading="lazy">
   <span class="pickup-badge">PR</span>
   <div class="pickup-genre">家電</div>
   <div class="pickup-name">【楽天総合ランキング1位】【正規品】【予約受付中】卓上扇風機 South Light 扇風機 壁掛け 吊り下げ マグネットリモコン付き LED照明機能付き 1台3役 サーキュレーター USB充電 風量3段階 パワフル送風 ギフト i-00004</div>
@@ -568,7 +580,7 @@
 </a>
 
 <a class="pickup-card" href="https://hb.afl.rakuten.co.jp/hgc/g00tic0n.ygcj41dd.g00tic0n.ygcj5522/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcheeryshop%2Fcheery01%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fcheeryshop%2Fi%2F10000168%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
-  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/cheeryshop/cabinet/09856728/f610gyh6980.jpg?_ex=128x128" alt="" loading="lazy">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/cheeryshop/cabinet/09856728/f610gyh6980.jpg?_ex=400x400" alt="" loading="lazy">
   <span class="pickup-badge">PR</span>
   <div class="pickup-genre">家電</div>
   <div class="pickup-name">楽天1位【COUPONで6,980円♪激安SALE】 扇風機 サーキュレーター dcモーター AI自動 3D 首振り 暴風 静音 国内60,000台累計販売 4モード 風量3段階 22畳 イオン発生 空気清浄機 入/切タイマー AI自動/お休み/普通/自然風モード 空気循環 換気 衣類乾燥 部屋干し 20mまで</div>
@@ -576,7 +588,7 @@
 </a>
 
 <a class="pickup-card" href="https://hb.afl.rakuten.co.jp/hgc/g00qb0ln.ygcj4aca.g00qb0ln.ygcj5f09/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Froomy%2F0001gft%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Froomy%2Fi%2F10001252%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
-  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/roomy/cabinet/500cart_all/500cart_11g/p10n-5/mtb2000-jr009-1_gt01.jpg?_ex=128x128" alt="" loading="lazy">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/roomy/cabinet/500cart_all/500cart_11g/p10n-5/mtb2000-jr009-1_gt01.jpg?_ex=400x400" alt="" loading="lazy">
   <span class="pickup-badge">PR</span>
   <div class="pickup-genre">家電</div>
   <div class="pickup-name">【即納】【収納袋の特典付き】バルミューダ 正規 グリーンファン 扇風機 EGF-1800 BALMUDA おしゃれ dcモーター 静音 首振り Green Fan DC 節電 dc扇風機 リビング サーキュレーター 省エネ エコ 卓上扇風機 小型 首ふり ホワイト グレー ブラック 黒 白［ The GreenFan ］</div>

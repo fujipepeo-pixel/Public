@@ -90,7 +90,6 @@
     text-decoration: none;
     transition: transform 0.22s ease, box-shadow 0.22s ease;
   }
-  .card:hover { transform: translateY(-5px); box-shadow: 0 12px 26px rgba(0,0,0,0.16); }
   .card:active { transform: translateY(-2px); }
   .card img {
     width: 100%;
@@ -213,7 +212,6 @@
     box-shadow: 0 1px 4px rgba(0,0,0,0.08);
     transition: transform 0.22s ease, box-shadow 0.22s ease;
   }
-  .genre-list a:hover { transform: translateY(-5px); box-shadow: 0 12px 26px rgba(0,0,0,0.16); }
   .genre-list a:active { transform: translateY(-2px); }
   .genre-list .genre-title { font-size: 1rem; font-weight: 700; }
   .genre-list .genre-count { font-size: 0.8rem; color: #888; margin-top: 4px; }
@@ -259,7 +257,6 @@
     scroll-snap-align: start;
     transition: transform 0.22s ease, box-shadow 0.22s ease;
   }
-  .pickup-card:hover { transform: translateY(-5px); box-shadow: 0 14px 28px rgba(0,0,0,0.28); }
   .pickup-card:active { transform: translateY(-2px); }
   .pickup-card img { width: 100%; height: 120px; object-fit: contain; border-radius: 10px; margin-bottom: 8px; background: #f5f5f5; }
   .pickup-badge {
@@ -351,7 +348,6 @@
     white-space: nowrap;
     transition: background 0.2s ease, transform 0.2s ease;
   }
-  .genre-nav a:hover { background: rgba(255,255,255,0.85); transform: translateY(-2px); }
   .genre-nav a.current { background: rgba(255,255,255,0.95); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
   .genre-intro {
     background: rgba(255,255,255,0.75);
@@ -400,7 +396,6 @@
     background: currentColor;
     transition: right 0.25s ease;
   }
-  .site-footer a:hover::after { right: 0; }
   .legal-content {
     background: rgba(255,255,255,0.85);
     backdrop-filter: blur(14px);
@@ -496,6 +491,23 @@
   #product-list .card:nth-child(12), .pickup-scroll .pickup-card:nth-child(12), .genre-list li:nth-child(12) > a { animation-delay: 0.540s; }
 }
 }
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover { transform: translateY(-5px); box-shadow: 0 12px 26px rgba(0,0,0,0.16); }
+  .genre-list a:hover { transform: translateY(-5px); box-shadow: 0 12px 26px rgba(0,0,0,0.16); }
+  .pickup-card:hover { transform: translateY(-5px); box-shadow: 0 14px 28px rgba(0,0,0,0.28); }
+  .genre-nav a:hover { background: rgba(255,255,255,0.85); transform: translateY(-2px); }
+  .site-footer a:hover::after { right: 0; }
+}
+
+/* スマホ幅向けの微調整: 余白・タップ領域を確保する(明示的なモバイル用ブレークポイントが
+   これまで無かったため追加)。 */
+@media (max-width: 480px) {
+  body { padding: 16px 12px 48px; }
+  h1 { font-size: 2rem; }
+  .toolbar select, .toolbar input[type="number"] { padding: 12px 14px; }
+  .toolbar input[type="number"] { width: 46%; max-width: 140px; }
+}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JZHB6QBWRQ"></script>
 <script>
@@ -573,7 +585,7 @@
 <p class="pickup-heading"><span class="pickup-heading-text">この記事でおすすめしたいアイテム</span></p>
 <div class="pickup-scroll">
 <a class="pickup-card" href="https://hb.afl.rakuten.co.jp/hgc/g00pr3zn.ygcj462b.g00pr3zn.ygcj56f8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdog-kan%2F324407%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fdog-kan%2Fi%2F10015015%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
-  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/dog-kan/cabinet/07991229/08167859/250341_00.jpg?_ex=128x128" alt="" loading="lazy">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/dog-kan/cabinet/07991229/08167859/250341_00.jpg?_ex=400x400" alt="" loading="lazy">
   <span class="pickup-badge">PR</span>
   <div class="pickup-genre">ペット用品</div>
   <div class="pickup-name">自動給水機 ペット 犬 猫 アイリスオーヤマ 自動給水器 J-200 ホワイト 給水器 給水 水飲み器 猫 ねこ ネコ 犬 イヌ ドリンク 水 猫用品 犬用品 自動 ひんやり 夏支度【R上】</div>
@@ -581,7 +593,7 @@
 </a>
 
 <a class="pickup-card" href="https://hb.afl.rakuten.co.jp/hgc/g00tb3cn.ygcj4349.g00tb3cn.ygcj5900/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsanmadrola%2Flt-cwd05%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsanmadrola%2Fi%2F10000529%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
-  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/sanmadrola/cabinet/10941229/imgrc0125463149.jpg?_ex=128x128" alt="" loading="lazy">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/sanmadrola/cabinet/10941229/imgrc0125463149.jpg?_ex=400x400" alt="" loading="lazy">
   <span class="pickup-badge">PR</span>
   <div class="pickup-genre">ペット用品</div>
   <div class="pickup-name">【8月限定！最大100%Pバック抽選で要エントリー】【2枚セット】ペット用トイレマット ペットベッド ペットシーツ おしっこパッド 吸水ベッド 洗える 汚れ防止 爪とぎ対策 爪とぎ おしっこマット 猫 トイレ ペットマット 吸水 滑り止め 犬用ベッド 小型 中型 大型</div>
@@ -589,7 +601,7 @@
 </a>
 
 <a class="pickup-card" href="https://hb.afl.rakuten.co.jp/hgc/g00pr3zn.ygcj462b.g00pr3zn.ygcj56f8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdog-kan%2F315359%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fdog-kan%2Fi%2F10007195%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
-  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/dog-kan/cabinet/tenposupport02/208389_petkan.jpg?_ex=128x128" alt="" loading="lazy">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/dog-kan/cabinet/tenposupport02/208389_petkan.jpg?_ex=400x400" alt="" loading="lazy">
   <span class="pickup-badge">PR</span>
   <div class="pickup-genre">ペット用品</div>
   <div class="pickup-name">ペットシーツ 吸収量up＆長時間消臭 厚型 厚手 ペットシート ワイド 200枚 レギュラー 400枚 犬 猫 トイレ シート シーツ 大容量 まとめ買い 業務用 ペット用 トイレシート オリジナルシーツ</div>

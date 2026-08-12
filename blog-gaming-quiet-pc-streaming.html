@@ -90,7 +90,6 @@
     text-decoration: none;
     transition: transform 0.22s ease, box-shadow 0.22s ease;
   }
-  .card:hover { transform: translateY(-5px); box-shadow: 0 12px 26px rgba(0,0,0,0.16); }
   .card:active { transform: translateY(-2px); }
   .card img {
     width: 100%;
@@ -213,7 +212,6 @@
     box-shadow: 0 1px 4px rgba(0,0,0,0.08);
     transition: transform 0.22s ease, box-shadow 0.22s ease;
   }
-  .genre-list a:hover { transform: translateY(-5px); box-shadow: 0 12px 26px rgba(0,0,0,0.16); }
   .genre-list a:active { transform: translateY(-2px); }
   .genre-list .genre-title { font-size: 1rem; font-weight: 700; }
   .genre-list .genre-count { font-size: 0.8rem; color: #888; margin-top: 4px; }
@@ -259,7 +257,6 @@
     scroll-snap-align: start;
     transition: transform 0.22s ease, box-shadow 0.22s ease;
   }
-  .pickup-card:hover { transform: translateY(-5px); box-shadow: 0 14px 28px rgba(0,0,0,0.28); }
   .pickup-card:active { transform: translateY(-2px); }
   .pickup-card img { width: 100%; height: 120px; object-fit: contain; border-radius: 10px; margin-bottom: 8px; background: #f5f5f5; }
   .pickup-badge {
@@ -351,7 +348,6 @@
     white-space: nowrap;
     transition: background 0.2s ease, transform 0.2s ease;
   }
-  .genre-nav a:hover { background: rgba(255,255,255,0.85); transform: translateY(-2px); }
   .genre-nav a.current { background: rgba(255,255,255,0.95); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
   .genre-intro {
     background: rgba(255,255,255,0.75);
@@ -400,7 +396,6 @@
     background: currentColor;
     transition: right 0.25s ease;
   }
-  .site-footer a:hover::after { right: 0; }
   .legal-content {
     background: rgba(255,255,255,0.85);
     backdrop-filter: blur(14px);
@@ -496,6 +491,23 @@
   #product-list .card:nth-child(12), .pickup-scroll .pickup-card:nth-child(12), .genre-list li:nth-child(12) > a { animation-delay: 0.540s; }
 }
 }
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover { transform: translateY(-5px); box-shadow: 0 12px 26px rgba(0,0,0,0.16); }
+  .genre-list a:hover { transform: translateY(-5px); box-shadow: 0 12px 26px rgba(0,0,0,0.16); }
+  .pickup-card:hover { transform: translateY(-5px); box-shadow: 0 14px 28px rgba(0,0,0,0.28); }
+  .genre-nav a:hover { background: rgba(255,255,255,0.85); transform: translateY(-2px); }
+  .site-footer a:hover::after { right: 0; }
+}
+
+/* スマホ幅向けの微調整: 余白・タップ領域を確保する(明示的なモバイル用ブレークポイントが
+   これまで無かったため追加)。 */
+@media (max-width: 480px) {
+  body { padding: 16px 12px 48px; }
+  h1 { font-size: 2rem; }
+  .toolbar select, .toolbar input[type="number"] { padding: 12px 14px; }
+  .toolbar input[type="number"] { width: 46%; max-width: 140px; }
+}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JZHB6QBWRQ"></script>
 <script>
@@ -560,7 +572,7 @@
 <p class="pickup-heading"><span class="pickup-heading-text">この記事でおすすめしたいアイテム</span></p>
 <div class="pickup-scroll">
 <a class="pickup-card" href="https://hb.afl.rakuten.co.jp/hgc/g00txpdn.ygcj4e02.g00txpdn.ygcj5816/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkrdirect%2Fgaming_blacktower_gtx1650_i3%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fkrdirect%2Fi%2F10001694%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
-  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/krdirect/cabinet/newpc/gaming/g_monitor_xx2026.jpg?_ex=128x128" alt="" loading="lazy">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/krdirect/cabinet/newpc/gaming/g_monitor_xx2026.jpg?_ex=400x400" alt="" loading="lazy">
   <span class="pickup-badge">PR</span>
   <div class="pickup-genre">ゲーミングPC・周辺機器</div>
   <div class="pickup-name">累計出荷台数1000台突破！ゲーミングPC デスクトップパソコン GeForce RTX2060 22型液晶モニター 第12世代 Intel Core i5 12400F Windows11 NVMe M.2 SSD256GB メモリ16GB ゲーミングパソコン</div>
@@ -568,7 +580,7 @@
 </a>
 
 <a class="pickup-card" href="https://hb.afl.rakuten.co.jp/hgc/g00ujkcn.ygcj472c.g00ujkcn.ygcj5647/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fgmktecdirect%2Fk8%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fgmktecdirect%2Fi%2F10000049%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
-  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/gmktecdirect/cabinet/10489774/k8/k8plus/k8plus-samune-2.jpg?_ex=128x128" alt="" loading="lazy">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/gmktecdirect/cabinet/10489774/k8/k8plus/k8plus-samune-2.jpg?_ex=400x400" alt="" loading="lazy">
   <span class="pickup-badge">PR</span>
   <div class="pickup-genre">ゲーミングPC・周辺機器</div>
   <div class="pickup-name">【クーポンで124,384円】GMKtec ミニpc AMD Ryzen7 8845HS MAX5.1GHz 8コア 16スレッド Oculink DDR5 32G 1T PCIe 4.0 M.2 2280 SSD Windows11 Pro Radeon 780M Bluetooth5.2 2.5Gbps LAN ミニパソコン 4画面 8K k8plus ゲーミングPC Minipc 小型pc ゲーミングpc</div>
@@ -576,7 +588,7 @@
 </a>
 
 <a class="pickup-card" href="https://hb.afl.rakuten.co.jp/hgc/g00ua55n.ygcj4824.g00ua55n.ygcj58f1/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fshingyotatsu818%2Fgk3j41258128%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fshingyotatsu818%2Fi%2F10000009%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
-  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/shingyotatsu818/cabinet/13279024/h1-7735-24512.jpg?_ex=128x128" alt="" loading="lazy">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/shingyotatsu818/cabinet/13279024/h1-7735-24512.jpg?_ex=400x400" alt="" loading="lazy">
   <span class="pickup-badge">PR</span>
   <div class="pickup-genre">ゲーミングPC・周辺機器</div>
   <div class="pickup-name">【本日限定15％OFF】OEM Key保証 ミニPC【AMD Ryzen 7 PRO 7735HS 24GB+1TB】最大4.75GHz ミニPC Windows11Pro 3画面出力 2.5GbpsLAN WiFi6 HDMI 省エネ 小型パソコン オフィス ゲーミングpc Ryzen みにpc minipc office 静音 LPDDR5 5500MT/s</div>

@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="「スポーツ用品」の商品一覧。Qoo10・楽天市場の在庫あり商品237件を掲載。">
+<meta name="description" content="「スポーツ用品」の商品一覧。Qoo10・楽天市場の在庫あり商品238件を掲載。">
 <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🏝️</text></svg>'>
 <meta property="og:title" content="スポーツ用品">
-<meta property="og:description" content="「スポーツ用品」の商品一覧。Qoo10・楽天市場の在庫あり商品237件を掲載。">
+<meta property="og:description" content="「スポーツ用品」の商品一覧。Qoo10・楽天市場の在庫あり商品238件を掲載。">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="スポーツ用品">
-<meta name="twitter:description" content="「スポーツ用品」の商品一覧。Qoo10・楽天市場の在庫あり商品237件を掲載。">
+<meta name="twitter:description" content="「スポーツ用品」の商品一覧。Qoo10・楽天市場の在庫あり商品238件を掲載。">
 <meta property="og:image" content="https://thumbnail.image.rakuten.co.jp/@0_mall/boomee/cabinet/001/800_800.jpg?_ex=400x400">
 <meta name="twitter:image" content="https://thumbnail.image.rakuten.co.jp/@0_mall/boomee/cabinet/001/800_800.jpg?_ex=400x400">
 <title>スポーツ用品</title>
@@ -90,7 +90,6 @@
     text-decoration: none;
     transition: transform 0.22s ease, box-shadow 0.22s ease;
   }
-  .card:hover { transform: translateY(-5px); box-shadow: 0 12px 26px rgba(0,0,0,0.16); }
   .card:active { transform: translateY(-2px); }
   .card img {
     width: 100%;
@@ -213,7 +212,6 @@
     box-shadow: 0 1px 4px rgba(0,0,0,0.08);
     transition: transform 0.22s ease, box-shadow 0.22s ease;
   }
-  .genre-list a:hover { transform: translateY(-5px); box-shadow: 0 12px 26px rgba(0,0,0,0.16); }
   .genre-list a:active { transform: translateY(-2px); }
   .genre-list .genre-title { font-size: 1rem; font-weight: 700; }
   .genre-list .genre-count { font-size: 0.8rem; color: #888; margin-top: 4px; }
@@ -259,7 +257,6 @@
     scroll-snap-align: start;
     transition: transform 0.22s ease, box-shadow 0.22s ease;
   }
-  .pickup-card:hover { transform: translateY(-5px); box-shadow: 0 14px 28px rgba(0,0,0,0.28); }
   .pickup-card:active { transform: translateY(-2px); }
   .pickup-card img { width: 100%; height: 120px; object-fit: contain; border-radius: 10px; margin-bottom: 8px; background: #f5f5f5; }
   .pickup-badge {
@@ -351,7 +348,6 @@
     white-space: nowrap;
     transition: background 0.2s ease, transform 0.2s ease;
   }
-  .genre-nav a:hover { background: rgba(255,255,255,0.85); transform: translateY(-2px); }
   .genre-nav a.current { background: rgba(255,255,255,0.95); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
   .genre-intro {
     background: rgba(255,255,255,0.75);
@@ -400,7 +396,6 @@
     background: currentColor;
     transition: right 0.25s ease;
   }
-  .site-footer a:hover::after { right: 0; }
   .legal-content {
     background: rgba(255,255,255,0.85);
     backdrop-filter: blur(14px);
@@ -496,6 +491,23 @@
   #product-list .card:nth-child(12), .pickup-scroll .pickup-card:nth-child(12), .genre-list li:nth-child(12) > a { animation-delay: 0.540s; }
 }
 }
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover { transform: translateY(-5px); box-shadow: 0 12px 26px rgba(0,0,0,0.16); }
+  .genre-list a:hover { transform: translateY(-5px); box-shadow: 0 12px 26px rgba(0,0,0,0.16); }
+  .pickup-card:hover { transform: translateY(-5px); box-shadow: 0 14px 28px rgba(0,0,0,0.28); }
+  .genre-nav a:hover { background: rgba(255,255,255,0.85); transform: translateY(-2px); }
+  .site-footer a:hover::after { right: 0; }
+}
+
+/* スマホ幅向けの微調整: 余白・タップ領域を確保する(明示的なモバイル用ブレークポイントが
+   これまで無かったため追加)。 */
+@media (max-width: 480px) {
+  body { padding: 16px 12px 48px; }
+  h1 { font-size: 2rem; }
+  .toolbar select, .toolbar input[type="number"] { padding: 12px 14px; }
+  .toolbar input[type="number"] { width: 46%; max-width: 140px; }
+}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JZHB6QBWRQ"></script>
 <script>
@@ -519,8 +531,8 @@
 <a href="sports.html" class="current">スポーツ用品</a>
 </nav>
 <h1>スポーツ用品</h1>
-<p class="subtitle"><span class="subtitle-text">「スポーツ用品」の商品一覧(全237件)</span></p>
-<p class="updated">最終更新: 2026-08-13 06:02</p>
+<p class="subtitle"><span class="subtitle-text">「スポーツ用品」の商品一覧(全238件)</span></p>
+<p class="updated">最終更新: 2026-08-13 06:45</p>
 <p class="pr-note-top">本ページのリンクには一部アフィリエイトリンクが含まれます(#PR)。</p>
 <p class="genre-intro">野球・テニス・ゴルフ・ランニングなど、スポーツ用品の在庫あり商品をまとめています。</p>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "スポーツ用品のランキングTOP3", "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@type": "Product", "name": "【クーポン利用で10%OFF】【楽天1位】【無料ラッピング付き】ゴルフ 距離計 レーザー距離計 高低差 一年保証 充電式 手ブレ補正 手振れ 自動ロック ゴルフ距離測定器 超軽量 レーザー距離測定器 ハードケース ゴルフ用品 コンパクト", "url": "https://hb.afl.rakuten.co.jp/hgc/g00u3rnn.ygcj4b65.g00u3rnn.ygcj5104/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fboomee%2Fqynkg01%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fboomee%2Fi%2F10000007%2F&rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41", "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/boomee/cabinet/001/800_800.jpg?_ex=400x400", "offers": {"@type": "Offer", "url": "https://hb.afl.rakuten.co.jp/hgc/g00u3rnn.ygcj4b65.g00u3rnn.ygcj5104/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fboomee%2Fqynkg01%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fboomee%2Fi%2F10000007%2F&rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41", "priceCurrency": "JPY", "availability": "https://schema.org/InStock", "price": "9600"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.2", "reviewCount": "2817"}}}, {"@type": "ListItem", "position": 2, "item": {"@type": "Product", "name": "【楽天1位】 ゴルフ ボールケース 2 機能性にこだわるプレイヤーの ゴルフボールケース 2個入れ グリーンフォーク マーカー 付属 Zesty ボールポーチ ボールホルダー ティーケース ティー コンペ 景品 プレゼント ギフト 父の日", "url": "https://hb.afl.rakuten.co.jp/hgc/g00temnn.ygcj4546.g00temnn.ygcj555f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwoodwest%2Fgolfball-case-7a%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fwoodwest%2Fi%2F10000041%2F&rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41", "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/woodwest/cabinet/7a-z/thumb/7a_00.jpg?_ex=400x400", "offers": {"@type": "Offer", "url": "https://hb.afl.rakuten.co.jp/hgc/g00temnn.ygcj4546.g00temnn.ygcj555f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwoodwest%2Fgolfball-case-7a%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fwoodwest%2Fi%2F10000041%2F&rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41", "priceCurrency": "JPY", "availability": "https://schema.org/InStock", "price": "3999"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "1535"}}}, {"@type": "ListItem", "position": 3, "item": {"@type": "Product", "name": "【クーポン利用で18%OFF】ゴルフ距離計 超小型距離計 レーザー距離計 ミニ mini 高低差 一年保証 充電式 手ブレ補正 マグネット 磁石 手振れ 自動ロック ゴルフ距離測定器 超軽量 ハードケース コンパクト ゴルフ用品 競技対応", "url": "https://hb.afl.rakuten.co.jp/hgc/g00u3rnn.ygcj4b65.g00u3rnn.ygcj5104/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fboomee%2Fqymini401%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fboomee%2Fi%2F10000127%2F&rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41", "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/boomee/cabinet/001/imgrc0098454155.jpg?_ex=400x400", "offers": {"@type": "Offer", "url": "https://hb.afl.rakuten.co.jp/hgc/g00u3rnn.ygcj4b65.g00u3rnn.ygcj5104/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fboomee%2Fqymini401%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fboomee%2Fi%2F10000127%2F&rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41", "priceCurrency": "JPY", "availability": "https://schema.org/InStock", "price": "16800"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.3", "reviewCount": "1417"}}}]}</script>
@@ -2073,16 +2085,16 @@
   </div>
 </a>
 
-<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00r0w7n.ygcj4d17.g00r0w7n.ygcj5537/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fapworld%2F07vc98l%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fapworld%2Fi%2F10091286%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored" data-price="24999" data-checked-at="">
-  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/apworld/cabinet/cm/2409f/07vc98l_001.jpg?_ex=400x400" alt="" loading="lazy">
+<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00r0w7n.ygcj4d17.g00r0w7n.ygcj5537/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fapworld%2F08vc100%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fapworld%2Fi%2F10109058%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored" data-price="34320" data-checked-at="">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/apworld/cabinet/cm/2602b/08vc100_01.jpg?_ex=400x400" alt="" loading="lazy">
   <div class="body">
     <div class="top">
       <span class="brand">APWORLD</span>
       <span class="badge rakuten">楽天市場</span>
     </div>
-    <div class="title">送料無料 YONEX テニスラケット 硬式テニス ヨネックス YONEX Vコア 98L VCORE 98L 加工費無料 軽量 コントロールモデル 上級・中級者向け 日本製 ブランド テニス用品/07VC98L【ギフト不可】</div>
-    <div class="review">★5.0<span class="count">(1件)</span></div>
-    <div class="price">¥24,999</div>
+    <div class="title">送料無料 ヨネックス 硬式テニス テニスラケット YONEX Vコア 100 加工費無料 オールラウンドモデル 上級・中級者向け 日本製 硬式用ラケット 硬式ラケット ブランド VCORE 100 テニス用品/08VC100【ギフト不可】</div>
+    <div class="review">★4.0<span class="count">(1件)</span></div>
+    <div class="price">¥34,320</div>
   </div>
 </a>
 
@@ -3292,6 +3304,19 @@
     <div class="title">【10%OFFクーポン発行中！】サロモン SALOMON SPEEDCROSS 6 GORE-TEX スピードクロス 6 ゴアテックス 防水 ランニングシューズ 靴 ウィメンズ レディース 女性陸上・ランニング用品</div>
     <div class="review">★5.0<span class="count">(2件)</span></div>
     <div class="price">¥22,000</div>
+  </div>
+</a>
+
+<a class="card" href="https://hb.afl.rakuten.co.jp/hgc/g00qmzun.ygcj47e8.g00qmzun.ygcj5680/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fyanosp-fineplay%2Fl41742800%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fyanosp-fineplay%2Fi%2F11217658%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored" data-price="18700" data-checked-at="">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/yanosp-fineplay/cabinet/a20250618/l41742800_1.jpg?_ex=400x400" alt="" loading="lazy">
+  <div class="body">
+    <div class="top">
+      <span class="brand">RUN JOURNEY</span>
+      <span class="badge rakuten">楽天市場</span>
+    </div>
+    <div class="title">【10%OFFクーポン発行中！】サロモン SALOMON SPEEDCROSS 6 ランニングシューズ 靴 ウィメンズ レディース 女性陸上・ランニング用品</div>
+    <div class="review">★5.0<span class="count">(2件)</span></div>
+    <div class="price">¥18,700</div>
   </div>
 </a>
 

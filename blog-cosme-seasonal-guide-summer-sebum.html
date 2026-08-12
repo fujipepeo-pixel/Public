@@ -90,7 +90,6 @@
     text-decoration: none;
     transition: transform 0.22s ease, box-shadow 0.22s ease;
   }
-  .card:hover { transform: translateY(-5px); box-shadow: 0 12px 26px rgba(0,0,0,0.16); }
   .card:active { transform: translateY(-2px); }
   .card img {
     width: 100%;
@@ -213,7 +212,6 @@
     box-shadow: 0 1px 4px rgba(0,0,0,0.08);
     transition: transform 0.22s ease, box-shadow 0.22s ease;
   }
-  .genre-list a:hover { transform: translateY(-5px); box-shadow: 0 12px 26px rgba(0,0,0,0.16); }
   .genre-list a:active { transform: translateY(-2px); }
   .genre-list .genre-title { font-size: 1rem; font-weight: 700; }
   .genre-list .genre-count { font-size: 0.8rem; color: #888; margin-top: 4px; }
@@ -259,7 +257,6 @@
     scroll-snap-align: start;
     transition: transform 0.22s ease, box-shadow 0.22s ease;
   }
-  .pickup-card:hover { transform: translateY(-5px); box-shadow: 0 14px 28px rgba(0,0,0,0.28); }
   .pickup-card:active { transform: translateY(-2px); }
   .pickup-card img { width: 100%; height: 120px; object-fit: contain; border-radius: 10px; margin-bottom: 8px; background: #f5f5f5; }
   .pickup-badge {
@@ -351,7 +348,6 @@
     white-space: nowrap;
     transition: background 0.2s ease, transform 0.2s ease;
   }
-  .genre-nav a:hover { background: rgba(255,255,255,0.85); transform: translateY(-2px); }
   .genre-nav a.current { background: rgba(255,255,255,0.95); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
   .genre-intro {
     background: rgba(255,255,255,0.75);
@@ -400,7 +396,6 @@
     background: currentColor;
     transition: right 0.25s ease;
   }
-  .site-footer a:hover::after { right: 0; }
   .legal-content {
     background: rgba(255,255,255,0.85);
     backdrop-filter: blur(14px);
@@ -496,6 +491,23 @@
   #product-list .card:nth-child(12), .pickup-scroll .pickup-card:nth-child(12), .genre-list li:nth-child(12) > a { animation-delay: 0.540s; }
 }
 }
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover { transform: translateY(-5px); box-shadow: 0 12px 26px rgba(0,0,0,0.16); }
+  .genre-list a:hover { transform: translateY(-5px); box-shadow: 0 12px 26px rgba(0,0,0,0.16); }
+  .pickup-card:hover { transform: translateY(-5px); box-shadow: 0 14px 28px rgba(0,0,0,0.28); }
+  .genre-nav a:hover { background: rgba(255,255,255,0.85); transform: translateY(-2px); }
+  .site-footer a:hover::after { right: 0; }
+}
+
+/* スマホ幅向けの微調整: 余白・タップ領域を確保する(明示的なモバイル用ブレークポイントが
+   これまで無かったため追加)。 */
+@media (max-width: 480px) {
+  body { padding: 16px 12px 48px; }
+  h1 { font-size: 2rem; }
+  .toolbar select, .toolbar input[type="number"] { padding: 12px 14px; }
+  .toolbar input[type="number"] { width: 46%; max-width: 140px; }
+}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JZHB6QBWRQ"></script>
 <script>
@@ -520,7 +532,7 @@
 <p class="pickup-heading"><span class="pickup-heading-text">この記事でおすすめしたいアイテム</span></p>
 <div class="pickup-scroll">
 <a class="pickup-card" href="https://hb.afl.rakuten.co.jp/hgc/g00ttxfn.ygcj4073.g00ttxfn.ygcj5355/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdalba%2F10000072%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fdalba%2Fi%2F10000072%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
-  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/dalba/cabinet/d_10000072/imgrc0122731595.jpg?_ex=128x128" alt="" loading="lazy">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/dalba/cabinet/d_10000072/imgrc0122731595.jpg?_ex=400x400" alt="" loading="lazy">
   <span class="pickup-badge">PR</span>
   <div class="pickup-genre">韓国コスメ</div>
   <div class="pickup-name">【 d&#x27;Alba ( ダルバ ) 公式 】【 選べる トーンアップUV下地 SPF50+ PA++++ 50ml 】 日焼け止め UV 紫外線 混合 くすみ 化粧下地 ベース メイク 低刺激 美容</div>
@@ -528,7 +540,7 @@
 </a>
 
 <a class="pickup-card" href="https://hb.afl.rakuten.co.jp/hgc/g00ttxfn.ygcj4073.g00ttxfn.ygcj5355/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdalba%2Fmito%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fdalba%2Fi%2F10000224%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
-  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/dalba/cabinet/d_mito/imgrc0123003646.jpg?_ex=128x128" alt="" loading="lazy">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/dalba/cabinet/d_mito/imgrc0123003646.jpg?_ex=400x400" alt="" loading="lazy">
   <span class="pickup-badge">PR</span>
   <div class="pickup-genre">韓国コスメ</div>
   <div class="pickup-name">【 d&#x27;Alba ( ダルバ ) 公式 】【 ダルバ ギフト セット 6種 】 ギフト 贈り物 ミスト 導入美容液 化粧水 日焼け止め UV 紫外線 保湿 鎮静 潤い ツヤ 弾力 化粧下地 ベース メイク アロマ クーリングケア 肌荒れ</div>
@@ -536,7 +548,7 @@
 </a>
 
 <a class="pickup-card" href="https://hb.afl.rakuten.co.jp/hgc/g00tzfxn.ygcj4edb.g00tzfxn.ygcj597e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftirtir%2Fmaskfit_toneup%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Ftirtir%2Fi%2F10000475%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
-  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/tirtir/cabinet/12135243/13091448/imgrc0128447056.jpg?_ex=128x128" alt="" loading="lazy">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/tirtir/cabinet/12135243/13091448/imgrc0128447056.jpg?_ex=400x400" alt="" loading="lazy">
   <span class="pickup-badge">PR</span>
   <div class="pickup-genre">韓国コスメ</div>
   <div class="pickup-name">【8/15 23:59まで！20％OFF】【TIRTIR公式】マスクフィットトーンアップシリーズ 化粧下地 UV下地 日焼け止め トーンアップ SPF50+ PA++++ SPF30 ノンケミカル ブルー ラベンダー ミント コーラル ピンク イエロー ベージュ 赤み 色ムラ くすみ 韓国コスメ ティルティル</div>

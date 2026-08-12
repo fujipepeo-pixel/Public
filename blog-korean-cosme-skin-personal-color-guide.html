@@ -88,7 +88,6 @@
     text-decoration: none;
     transition: transform 0.22s ease, box-shadow 0.22s ease;
   }
-  .card:hover { transform: translateY(-5px); box-shadow: 0 12px 26px rgba(0,0,0,0.16); }
   .card:active { transform: translateY(-2px); }
   .card img {
     width: 100%;
@@ -211,7 +210,6 @@
     box-shadow: 0 1px 4px rgba(0,0,0,0.08);
     transition: transform 0.22s ease, box-shadow 0.22s ease;
   }
-  .genre-list a:hover { transform: translateY(-5px); box-shadow: 0 12px 26px rgba(0,0,0,0.16); }
   .genre-list a:active { transform: translateY(-2px); }
   .genre-list .genre-title { font-size: 1rem; font-weight: 700; }
   .genre-list .genre-count { font-size: 0.8rem; color: #888; margin-top: 4px; }
@@ -257,7 +255,6 @@
     scroll-snap-align: start;
     transition: transform 0.22s ease, box-shadow 0.22s ease;
   }
-  .pickup-card:hover { transform: translateY(-5px); box-shadow: 0 14px 28px rgba(0,0,0,0.28); }
   .pickup-card:active { transform: translateY(-2px); }
   .pickup-card img { width: 100%; height: 120px; object-fit: contain; border-radius: 10px; margin-bottom: 8px; background: #f5f5f5; }
   .pickup-badge {
@@ -349,7 +346,6 @@
     white-space: nowrap;
     transition: background 0.2s ease, transform 0.2s ease;
   }
-  .genre-nav a:hover { background: rgba(255,255,255,0.85); transform: translateY(-2px); }
   .genre-nav a.current { background: rgba(255,255,255,0.95); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
   .genre-intro {
     background: rgba(255,255,255,0.75);
@@ -398,7 +394,6 @@
     background: currentColor;
     transition: right 0.25s ease;
   }
-  .site-footer a:hover::after { right: 0; }
   .legal-content {
     background: rgba(255,255,255,0.85);
     backdrop-filter: blur(14px);
@@ -494,6 +489,23 @@
   #product-list .card:nth-child(12), .pickup-scroll .pickup-card:nth-child(12), .genre-list li:nth-child(12) > a { animation-delay: 0.540s; }
 }
 }
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover { transform: translateY(-5px); box-shadow: 0 12px 26px rgba(0,0,0,0.16); }
+  .genre-list a:hover { transform: translateY(-5px); box-shadow: 0 12px 26px rgba(0,0,0,0.16); }
+  .pickup-card:hover { transform: translateY(-5px); box-shadow: 0 14px 28px rgba(0,0,0,0.28); }
+  .genre-nav a:hover { background: rgba(255,255,255,0.85); transform: translateY(-2px); }
+  .site-footer a:hover::after { right: 0; }
+}
+
+/* スマホ幅向けの微調整: 余白・タップ領域を確保する(明示的なモバイル用ブレークポイントが
+   これまで無かったため追加)。 */
+@media (max-width: 480px) {
+  body { padding: 16px 12px 48px; }
+  h1 { font-size: 2rem; }
+  .toolbar select, .toolbar input[type="number"] { padding: 12px 14px; }
+  .toolbar input[type="number"] { width: 46%; max-width: 140px; }
+}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JZHB6QBWRQ"></script>
 <script>
@@ -525,7 +537,7 @@
 <p class="pickup-heading"><span class="pickup-heading-text">韓国コスメの今の在庫から</span></p>
 <div class="pickup-scroll">
 <a class="pickup-card" href="https://hb.afl.rakuten.co.jp/hgc/g00tzfxn.ygcj4edb.g00tzfxn.ygcj597e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftirtir%2F444-468_1%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Ftirtir%2Fi%2F10000155%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
-  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/tirtir/cabinet/12135243/13091448/imgrc0128447061.jpg?_ex=128x128" alt="" loading="lazy">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/tirtir/cabinet/12135243/13091448/imgrc0128447061.jpg?_ex=400x400" alt="" loading="lazy">
   <span class="pickup-badge">PR</span>
   <div class="pickup-genre">韓国コスメ</div>
   <div class="pickup-name">【8/15 23:59まで！20％OFF】【TIRTIR公式】 マスクフィットクッション ルビーメッシュ AI レッド クリスタルメッシュ 本品 18g, 15g クッションファンデ ファンデーション カバー力 ハイカバー 毛穴カバー ツヤ肌 崩れにくい 薄づき 韓国コスメ ティルティル</div>
@@ -533,7 +545,7 @@
 </a>
 
 <a class="pickup-card" href="https://hb.afl.rakuten.co.jp/hgc/g00u6mzn.ygcj44bc.g00u6mzn.ygcj5131/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanuajapan%2Fanua00023%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fanuajapan%2Fi%2F10000021%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
-  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/anuajapan/cabinet/anua00023/anua00023_renew/anua00023_2650.jpg?_ex=128x128" alt="" loading="lazy">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/anuajapan/cabinet/anua00023/anua00023_renew/anua00023_2650.jpg?_ex=400x400" alt="" loading="lazy">
   <span class="pickup-badge">PR</span>
   <div class="pickup-genre">韓国コスメ</div>
   <div class="pickup-name">★2,650円相当★＼ドクダミリニューアル新発売／【Anua公式】【自然由来トナー単品 250ml（全4種）】ドクダミ 桃 ライス シラカバ 化粧水 ローション 輸液 美容液 ニキビ 皮脂 肌キメ 韓国コスメ アヌア</div>
@@ -541,7 +553,7 @@
 </a>
 
 <a class="pickup-card" href="https://hb.afl.rakuten.co.jp/hgc/g00ti5vn.ygcj4350.g00ti5vn.ygcj53e5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fasiabnc%2Fbrowcara%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fasiabnc%2Fi%2F10000243%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
-  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/asiabnc/cabinet/13403069/13403073/imgrc0107047247.jpg?_ex=128x128" alt="" loading="lazy">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/asiabnc/cabinet/13403069/13403073/imgrc0107047247.jpg?_ex=400x400" alt="" loading="lazy">
   <span class="pickup-badge">PR</span>
   <div class="pickup-genre">韓国コスメ</div>
   <div class="pickup-name">＼3,500円以上注文でランダム現品プレゼント／【ロムアンド公式】ハンオールブロウカラ rom&amp;nd official romand HAN ALL BROW CARA ロムアンド ブロウカラ 眉マスカラ アイブロウ 眉毛マスカラ 落ちにくい 塗りやすい 自然なまつ毛 韓国コスメ ロムアンド公式ショップ</div>
