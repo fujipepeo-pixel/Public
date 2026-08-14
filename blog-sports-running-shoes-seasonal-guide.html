@@ -293,7 +293,10 @@
     padding: 10px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.22);
     border: 2px solid rgba(255,255,255,0.7);
+    text-align: center;
   }
+  /* A8.netの広告タグは画像サイズを自社サーバー側から等倍で読み込むため、CSS側で表示上のサイズを半分に制限する */
+  .a8-banner-item img { max-width: 255px; width: 100%; height: auto; }
   .pickup-badge {
     display: inline-block;
     background: linear-gradient(90deg, #ff5f6d, #ffa53d);
