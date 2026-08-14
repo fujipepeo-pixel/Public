@@ -313,6 +313,11 @@
     object-fit: cover;
     object-position: top center;
   }
+  /* 横長バナー(HUAWEI等、幅1500x高さ360のような比率)は正方形切り抜きだと大部分が見切れてしまうため、
+     カード自体を横長にし、object-fit: containで全体を欠けさせずに表示する。 */
+  .a8-banner-item.wide { width: 320px; }
+  .a8-banner-item.wide .a8-banner-media { height: auto; aspect-ratio: 1500 / 360; }
+  .a8-banner-item.wide .a8-banner-media a img { object-fit: contain; }
   .a8-banner-brand {
     font-size: 0.72rem;
     font-weight: 800;
