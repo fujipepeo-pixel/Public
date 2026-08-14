@@ -423,6 +423,41 @@
     white-space: nowrap;
     transition: background 0.2s ease, transform 0.2s ease;
   }
+  .blog-filter {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 4px 2px 16px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .blog-filter button {
+    flex: 0 0 auto;
+    padding: 6px 14px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    font-family: inherit;
+    color: #222;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 999px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .blog-filter button.active {
+    background: rgba(255,255,255,0.95);
+    font-weight: 800;
+  }
+  .blog-genre-badge {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: #666;
+    background: rgba(0,0,0,0.06);
+    padding: 2px 9px;
+    border-radius: 999px;
+    margin-bottom: 6px;
+  }
   .genre-nav a.current { background: rgba(255,255,255,0.95); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
   .genre-intro {
     background: rgba(255,255,255,0.75);
@@ -609,104 +644,132 @@
 <a class="back-link" href="index.html">&larr; トップに戻る</a>
 <h1 style="font-size:2rem;">📝 ブログ</h1>
 <p class="subtitle"><span class="subtitle-text">選び方ガイドやお得情報のまとめ記事</span></p>
+<div class="blog-filter">
+<button type="button" class="active" data-genre-filter="">すべて</button>
+<button type="button" data-genre-filter="sports">スポーツ用品</button>
+<button type="button" data-genre-filter="outdoor">アウトドア用品</button>
+<button type="button" data-genre-filter="baby">ベビー用品</button>
+<button type="button" data-genre-filter="kitchen">キッチン家電</button>
+<button type="button" data-genre-filter="pet">ペット用品</button>
+<button type="button" data-genre-filter="gaming">ゲーミングPC・周辺機器</button>
+<button type="button" data-genre-filter="denki">家電</button>
+<button type="button" data-genre-filter="cosme">韓国コスメ</button>
+</div>
 <ul class="genre-list">
-<li><a href="blog-sports-heatstroke-prevention-guide.html">
+<li data-genre="sports"><a href="blog-sports-heatstroke-prevention-guide.html">
+  <span class="blog-genre-badge">スポーツ用品</span>
   <div class="genre-title">夏の部活を乗り切る熱中症対策グッズの選び方</div>
   <p style="font-size:0.82rem;color:#666;margin:6px 0 4px;line-height:1.5;">夏の屋外部活で役立つ熱中症対策グッズの選び方を、冷却・水分補給・服装・計測の観点から解説します。</p>
   <div class="genre-count">2026-08-14</div>
 </a></li>
 
-<li><a href="blog-outdoor-bonfire-cold-weather-gear.html">
+<li data-genre="outdoor"><a href="blog-outdoor-bonfire-cold-weather-gear.html">
+  <span class="blog-genre-badge">アウトドア用品</span>
   <div class="genre-title">秋冬の焚き火を快適に。防寒ギアの選び方比較</div>
   <p style="font-size:0.82rem;color:#666;margin:6px 0 4px;line-height:1.5;">秋冬の焚き火シーンで活躍する防寒ギアを、ウェア・チェア・足元・小物別に比較しながら選び方のポイントを紹介します。気温別の調整方法や初心者向けの揃え方もまとめました。</p>
   <div class="genre-count">2026-08-14</div>
 </a></li>
 
-<li><a href="blog-baby-weaning-tableware-guide.html">
+<li data-genre="baby"><a href="blog-baby-weaning-tableware-guide.html">
+  <span class="blog-genre-badge">ベビー用品</span>
   <div class="genre-title">月齢別に選ぶ離乳食食器の素材・サイズの比較ポイント</div>
   <p style="font-size:0.82rem;color:#666;margin:6px 0 4px;line-height:1.5;">離乳食用食器を月齢別に選ぶコツを解説。素材やサイズ、安全性の確認ポイントをまとめて紹介します。</p>
   <div class="genre-count">2026-08-14</div>
 </a></li>
 
-<li><a href="blog-kitchen-time-saving-appliances-guide.html">
+<li data-genre="kitchen"><a href="blog-kitchen-time-saving-appliances-guide.html">
+  <span class="blog-genre-badge">キッチン家電</span>
   <div class="genre-title">共働き家庭の時短夕食に役立つ調理家電の選び方</div>
   <p style="font-size:0.82rem;color:#666;margin:6px 0 4px;line-height:1.5;">忙しい共働き家庭向けに、夕食作りの時短につながる調理家電の選び方と注意点を紹介します。調理方式の違いや初心者向けの1台目選び、季節ごとの活用シーンまで整理しました。</p>
   <div class="genre-count">2026-08-14</div>
 </a></li>
 
-<li><a href="blog-pet-winter-heater-safety-guide.html">
+<li data-genre="pet"><a href="blog-pet-winter-heater-safety-guide.html">
+  <span class="blog-genre-badge">ペット用品</span>
   <div class="genre-title">冬の留守番、ペット用ヒーターの選び方と安全性の見極め方</div>
   <p style="font-size:0.82rem;color:#666;margin:6px 0 4px;line-height:1.5;">留守番中のペットを寒さから守るヒーター選びについて、種類ごとの特徴や安全性チェックポイント、設置場所の注意点をわかりやすく解説します。</p>
   <div class="genre-count">2026-08-14</div>
 </a></li>
 
-<li><a href="blog-gaming-compact-pc-small-room.html">
+<li data-genre="gaming"><a href="blog-gaming-compact-pc-small-room.html">
+  <span class="blog-genre-badge">ゲーミングPC・周辺機器</span>
   <div class="genre-title">狭い部屋でも快適！省スペース型ゲーミングPCの選び方</div>
   <p style="font-size:0.82rem;color:#666;margin:6px 0 4px;line-height:1.5;">一人暮らしや狭い部屋でも設置しやすい省スペース型ゲーミングPCの選び方を、サイズ・冷却・スペック・拡張性の観点から解説します。</p>
   <div class="genre-count">2026-08-14</div>
 </a></li>
 
-<li><a href="blog-denki-humidifier-winter-guide.html">
+<li data-genre="denki"><a href="blog-denki-humidifier-winter-guide.html">
+  <span class="blog-genre-badge">家電</span>
   <div class="genre-title">冬の乾燥対策に効く加湿器の選び方ガイド</div>
   <p style="font-size:0.82rem;color:#666;margin:6px 0 4px;line-height:1.5;">部屋の広さ別に加湿器タイプを解説。冬の乾燥対策や初心者向けの選び方、注意点をまとめました。</p>
   <div class="genre-count">2026-08-14</div>
 </a></li>
 
-<li><a href="blog-cosme-budget-vs-department-ingredient-comparison.html">
+<li data-genre="cosme"><a href="blog-cosme-budget-vs-department-ingredient-comparison.html">
+  <span class="blog-genre-badge">韓国コスメ</span>
   <div class="genre-title">プチプラ vs デパコス韓国コスメ 成分表示の比較術</div>
   <p style="font-size:0.82rem;color:#666;margin:6px 0 4px;line-height:1.5;">韓国コスメのプチプラとデパコス、成分表示のどこを見れば違いが分かるのか整理して解説します。</p>
   <div class="genre-count">2026-08-14</div>
 </a></li>
 
-<li><a href="blog-sports-running-shoes-seasonal-guide.html">
+<li data-genre="sports"><a href="blog-sports-running-shoes-seasonal-guide.html">
+  <span class="blog-genre-badge">スポーツ用品</span>
   <div class="genre-title">初心者ランナー向け 季節別ランニングシューズ選び</div>
   <p style="font-size:0.82rem;color:#666;margin:6px 0 4px;line-height:1.5;">初心者ランナーが季節ごとにランニングシューズを選ぶ際の注目ポイントを、通気性やクッション性などの観点からまとめました。夏・冬・春秋それぞれの選び方やサイズ感、FAQも紹介します。</p>
   <div class="genre-count">2026-08-12</div>
 </a></li>
 
-<li><a href="blog-outdoor-family-camp-tent-guide.html">
+<li data-genre="outdoor"><a href="blog-outdoor-family-camp-tent-guide.html">
+  <span class="blog-genre-badge">アウトドア用品</span>
   <div class="genre-title">初夏のファミリーキャンプに合うテント選びの基本</div>
   <p style="font-size:0.82rem;color:#666;margin:6px 0 4px;line-height:1.5;">初夏のファミリーキャンプ向けテントを耐水圧と設営時間の視点から比較し、選び方のポイントを解説します。</p>
   <div class="genre-count">2026-08-12</div>
 </a></li>
 
-<li><a href="blog-pet-summer-cooling-guide.html">
+<li data-genre="pet"><a href="blog-pet-summer-cooling-guide.html">
+  <span class="blog-genre-badge">ペット用品</span>
   <div class="genre-title">犬猫別に選ぶ夏の冷却グッズと設置場所のコツ</div>
   <p style="font-size:0.82rem;color:#666;margin:6px 0 4px;line-height:1.5;">犬猫それぞれの体の特徴に合わせた冷却グッズの選び方と、効果を高める設置場所の工夫を紹介します。</p>
   <div class="genre-count">2026-08-12</div>
 </a></li>
 
-<li><a href="blog-baby-carrier-seasonal-guide.html">
+<li data-genre="baby"><a href="blog-baby-carrier-seasonal-guide.html">
+  <span class="blog-genre-badge">ベビー用品</span>
   <div class="genre-title">季節別で選ぶ抱っこ紐の通気性・防寒性チェックポイント</div>
   <p style="font-size:0.82rem;color:#666;margin:6px 0 4px;line-height:1.5;">抱っこ紐の通気性・防寒性を季節ごとにチェックするポイントを解説。夏・冬・春秋それぞれの選び方や素材の違い、お手入れの視点まで実用的にまとめました。</p>
   <div class="genre-count">2026-08-12</div>
 </a></li>
 
-<li><a href="blog-kitchen-breakfast-appliances.html">
+<li data-genre="kitchen"><a href="blog-kitchen-breakfast-appliances.html">
+  <span class="blog-genre-badge">キッチン家電</span>
   <div class="genre-title">一人暮らしの朝食作りに役立つキッチン家電の選び方</div>
   <p style="font-size:0.82rem;color:#666;margin:6px 0 4px;line-height:1.5;">忙しい朝でも無理なく朝食を作れるキッチン家電の選び方を、サイズ・機能・後片付けの観点から解説します。</p>
   <div class="genre-count">2026-08-12</div>
 </a></li>
 
-<li><a href="blog-gaming-quiet-pc-streaming.html">
+<li data-genre="gaming"><a href="blog-gaming-quiet-pc-streaming.html">
+  <span class="blog-genre-badge">ゲーミングPC・周辺機器</span>
   <div class="genre-title">在宅配信・実況勢のための静音ゲーミングPC選び方</div>
   <p style="font-size:0.82rem;color:#666;margin:6px 0 4px;line-height:1.5;">配信や実況で音を気にする方向けに、静音性重視のゲーミングPCの選び方や注目ポイントを解説します。</p>
   <div class="genre-count">2026-08-12</div>
 </a></li>
 
-<li><a href="blog-denki-cooling-appliances-summer.html">
+<li data-genre="denki"><a href="blog-denki-cooling-appliances-summer.html">
+  <span class="blog-genre-badge">家電</span>
   <div class="genre-title">一人暮らしの夏を涼しく乗り切る冷風家電の選び方</div>
   <p style="font-size:0.82rem;color:#666;margin:6px 0 4px;line-height:1.5;">一人暮らしの夏を省エネで快適に過ごすための冷風扇・扇風機の選び方や注意点を解説します。</p>
   <div class="genre-count">2026-08-12</div>
 </a></li>
 
-<li><a href="blog-cosme-seasonal-guide-summer-sebum.html">
+<li data-genre="cosme"><a href="blog-cosme-seasonal-guide-summer-sebum.html">
+  <span class="blog-genre-badge">韓国コスメ</span>
   <div class="genre-title">季節別に見る韓国コスメの選び方と夏の皮脂対策</div>
   <p style="font-size:0.82rem;color:#666;margin:6px 0 4px;line-height:1.5;">季節ごとの韓国コスメの選び方と、夏の汗・皮脂対策アイテムの比較ポイントを実用的に解説します。</p>
   <div class="genre-count">2026-08-12</div>
 </a></li>
 
-<li><a href="blog-korean-cosme-skin-personal-color-guide.html">
+<li data-genre="cosme"><a href="blog-korean-cosme-skin-personal-color-guide.html">
+  <span class="blog-genre-badge">韓国コスメ</span>
   <div class="genre-title">韓国コスメの選び方 肌質・パーソナルカラー別ガイド</div>
   <p style="font-size:0.82rem;color:#666;margin:6px 0 4px;line-height:1.5;">韓国コスメを選ぶ際に押さえておきたい、肌質別・パーソナルカラー別のチェックポイントをまとめました。成分や仕上がりの好みまで、失敗しにくい選び方の基本を解説します。</p>
   <div class="genre-count">2026-08-11</div>
@@ -717,5 +780,22 @@
 <a href="blog.html">ブログ</a>|<a href="about.html">運営者情報</a>|<a href="privacy.html">プライバシーポリシー</a>
 </footer>
 </div>
+<script>
+(function () {
+  var buttons = document.querySelectorAll('.blog-filter button');
+  var items = document.querySelectorAll('.genre-list li');
+  if (!buttons.length) return;
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      buttons.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var genre = btn.getAttribute('data-genre-filter');
+      items.forEach(function (li) {
+        li.style.display = (!genre || li.getAttribute('data-genre') === genre) ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>

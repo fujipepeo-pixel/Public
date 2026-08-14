@@ -423,6 +423,41 @@
     white-space: nowrap;
     transition: background 0.2s ease, transform 0.2s ease;
   }
+  .blog-filter {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 4px 2px 16px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .blog-filter button {
+    flex: 0 0 auto;
+    padding: 6px 14px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    font-family: inherit;
+    color: #222;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 999px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .blog-filter button.active {
+    background: rgba(255,255,255,0.95);
+    font-weight: 800;
+  }
+  .blog-genre-badge {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: #666;
+    background: rgba(0,0,0,0.06);
+    padding: 2px 9px;
+    border-radius: 999px;
+    margin-bottom: 6px;
+  }
   .genre-nav a.current { background: rgba(255,255,255,0.95); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
   .genre-intro {
     background: rgba(255,255,255,0.75);
@@ -626,20 +661,20 @@
   <div class="pickup-price">¥6,490</div>
 </a>
 
-<a class="pickup-card" href="https://hb.afl.rakuten.co.jp/hgc/g00qmzun.ygcj47e8.g00qmzun.ygcj5680/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fyanosp-fineplay%2Fcloud6w%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fyanosp-fineplay%2Fi%2F11221711%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
-  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/yanosp-fineplay/cabinet/13666922/imbox_cloud6w_1.jpg?_ex=400x400" alt="" loading="lazy">
+<a class="pickup-card" href="https://hb.afl.rakuten.co.jp/hgc/g00u3rnn.ygcj4b65.g00u3rnn.ygcj5104/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fboomee%2Fqynkg01%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fboomee%2Fi%2F10000007%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/boomee/cabinet/001/800_800.jpg?_ex=400x400" alt="" loading="lazy">
   <span class="pickup-badge">PR</span>
   <div class="pickup-genre">スポーツ用品</div>
-  <div class="pickup-name">【6％OFFクーポン＆撥水加工＆ソックス2足付】 オン On Cloud 6 クラウド 6 ランニングシューズ 靴 ウィメンズ レディース 女性【cloud6w】陸上・ランニング用品</div>
-  <div class="pickup-price">¥19,800</div>
+  <div class="pickup-name">【クーポン利用で10%OFF】【楽天1位】【無料ラッピング付き】ゴルフ 距離計 レーザー距離計 高低差 一年保証 充電式 手ブレ補正 手振れ 自動ロック ゴルフ距離測定器 超軽量 レーザー距離測定器 ハードケース ゴルフ用品 コンパクト</div>
+  <div class="pickup-price">¥9,600</div>
 </a>
 
-<a class="pickup-card" href="https://hb.afl.rakuten.co.jp/hgc/g00qmzun.ygcj47e8.g00qmzun.ygcj5680/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fyanosp-fineplay%2Fcloud6wpm%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fyanosp-fineplay%2Fi%2F11221822%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
-  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/yanosp-fineplay/cabinet/item/on/09929871/cloud6wpm_1.jpg?_ex=400x400" alt="" loading="lazy">
+<a class="pickup-card" href="https://hb.afl.rakuten.co.jp/hgc/g00temnn.ygcj4546.g00temnn.ygcj555f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fwoodwest%2Fgolfball-case-7a%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fwoodwest%2Fi%2F10000041%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/woodwest/cabinet/7a-z/thumb/7a_00.jpg?_ex=400x400" alt="" loading="lazy">
   <span class="pickup-badge">PR</span>
   <div class="pickup-genre">スポーツ用品</div>
-  <div class="pickup-name">【10%OFFクーポン＆ソックス2足プレゼント】 オン On Cloud 6 Waterproof クラウド 6 ウォータープルーフ ランニングシューズ 靴 メンズ 男性【cloud6wpm】陸上・ランニング用品</div>
-  <div class="pickup-price">¥22,000</div>
+  <div class="pickup-name">【楽天1位】 ゴルフ ボールケース 2 機能性にこだわるプレイヤーの ゴルフボールケース 2個入れ グリーンフォーク マーカー 付属 Zesty ボールポーチ ボールホルダー ティーケース ティー コンペ 景品 プレゼント ギフト 父の日</div>
+  <div class="pickup-price">¥3,999</div>
 </a>
 
 </div>
