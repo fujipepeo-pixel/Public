@@ -143,6 +143,41 @@
   .card .review .count { color: #999; margin-left: 4px; }
   .card .price { font-size: 1.05rem; font-weight: 700; }
   .empty { text-align: center; color: #fff; padding: 48px 0; background: rgba(255,255,255,0.15); border-radius: 12px; }
+  .related-posts {
+    max-width: 640px;
+    margin: 32px auto 0;
+    padding: 20px 24px;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  }
+  .related-posts-heading {
+    margin: 0 0 10px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #222;
+  }
+  .related-posts-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .related-posts-list a {
+    display: block;
+    padding: 8px 4px;
+    font-size: 0.88rem;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+  .related-posts-list li:last-child a { border-bottom: none; }
+  .related-posts-list a:hover { color: #ff5f6d; }
   .pr-note {
     display: block;
     width: fit-content;
@@ -713,6 +748,15 @@
   <div class="pickup-price">¥7,980</div>
 </a>
 
+<a class="pickup-card" href="https://hb.afl.rakuten.co.jp/hgc/g00pwhcn.ygcj413c.g00pwhcn.ygcj5ee6/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fidog%2Fli036-s%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fidog%2Fi%2F10003507%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
+  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/idog/cabinet/std/li036s_s00.jpg?_ex=400x400" alt="" loading="lazy">
+  <span class="pickup-badge">PR</span>
+  <div class="pickup-genre">ペット用品</div>
+  <div class="pickup-name">【 犬 食器台 】iDog Living Keatキート Sサイズ フードボウル別売【 犬の食器台 フードボウルスタンド 食器スタンド テーブル 食器 木製 国産 安全 超小型犬 小型犬 犬用 猫用 icat idog 犬用品 楽天市場】</div>
+    <div class="review">★4.4<span class="count">(511件)</span></div>
+  <div class="pickup-price">¥2,970</div>
+</a>
+
 <a class="pickup-card" href="https://hb.afl.rakuten.co.jp/hgc/g00pr3zn.ygcj462b.g00pr3zn.ygcj56f8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdog-kan%2F315359%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fdog-kan%2Fi%2F10007195%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
   <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/dog-kan/cabinet/tenposupport02/208389_petkan.jpg?_ex=400x400" alt="" loading="lazy">
   <span class="pickup-badge">PR</span>
@@ -722,18 +766,17 @@
   <div class="pickup-price">¥4,680</div>
 </a>
 
-<a class="pickup-card" href="https://hb.afl.rakuten.co.jp/hgc/g00prban.ygcj479f.g00prban.ygcj587a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmaxshare%2Fmax-a09192%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fmaxshare%2Fi%2F10057617%2F&amp;rafcid=wsc_i_is_1bd50440-c0d3-4021-8075-6c85064c9c41" target="_blank" rel="noopener sponsored">
-  <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/maxshare/cabinet/master/1st2/max-a09192.jpg?_ex=400x400" alt="" loading="lazy">
-  <span class="pickup-badge">PR</span>
-  <div class="pickup-genre">ペット用品</div>
-  <div class="pickup-name">【楽天1位】ペットサークル 折りたたみ 屋根付き M/L/XL 3サイズ 90cm 114cm 150cm メッシュ 八角形 小型犬/中型犬/大型犬 室内 屋内 野外 犬 猫 底あり 折り畳み 持ち運び プレイサークル ペット ケージ ソフトケージ 軽量 犬用ケージ ペット用品 1年保証 ★[送料無料]</div>
-    <div class="review">★4.4<span class="count">(3,278件)</span></div>
-  <div class="pickup-price">¥4,730</div>
-</a>
-
 </div>
 </div>
 <p><a class="back-link" href="pet.html">ペット用品の在庫一覧を見る &rarr;</a></p>
+<div class="related-posts">
+<p class="related-posts-heading">関連記事</p>
+<ul class="related-posts-list">
+<li><a href="blog-pet-carrier-travel-scene-guide.html">シーン別ペットキャリーの選び方|新幹線・車・飛行機での使い分けガイド</a></li>
+<li><a href="blog-pet-senior-joint-care-guide.html">シニア犬猫の関節ケア|段差対策とベッド選び</a></li>
+<li><a href="blog-pet-disaster-preparedness-guide.html">ペット防災グッズの選び方|避難所生活を想定した準備リスト</a></li>
+</ul>
+</div>
 <p class="pr-note">本ページのリンクには一部アフィリエイトリンクが含まれます(#PR)。</p>
 <footer class="site-footer">
 <a href="blog.html">ブログ</a>|<a href="about.html">運営者情報</a>|<a href="privacy.html">プライバシーポリシー</a>|<a href="japan-finds.html">🌏 For overseas buyers</a>

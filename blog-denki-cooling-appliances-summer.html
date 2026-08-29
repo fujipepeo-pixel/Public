@@ -143,6 +143,41 @@
   .card .review .count { color: #999; margin-left: 4px; }
   .card .price { font-size: 1.05rem; font-weight: 700; }
   .empty { text-align: center; color: #fff; padding: 48px 0; background: rgba(255,255,255,0.15); border-radius: 12px; }
+  .related-posts {
+    max-width: 640px;
+    margin: 32px auto 0;
+    padding: 20px 24px;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  }
+  .related-posts-heading {
+    margin: 0 0 10px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #222;
+  }
+  .related-posts-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .related-posts-list a {
+    display: block;
+    padding: 8px 4px;
+    font-size: 0.88rem;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+  .related-posts-list li:last-child a { border-bottom: none; }
+  .related-posts-list a:hover { color: #ff5f6d; }
   .pr-note {
     display: block;
     width: fit-content;
@@ -727,6 +762,14 @@
 </div>
 </div>
 <p><a class="back-link" href="denki.html">家電の在庫一覧を見る &rarr;</a></p>
+<div class="related-posts">
+<p class="related-posts-heading">関連記事</p>
+<ul class="related-posts-list">
+<li><a href="blog-denki-mold-removal-appliance-year-end-guide.html">年末大掃除に役立つ窓・浴室のカビ取り家電選び</a></li>
+<li><a href="blog-denki-cordless-vacuum-guest-season-guide.html">来客シーズン前に見直す コードレス掃除機の選び方</a></li>
+<li><a href="blog-denki-air-purifier-remote-work-guide.html">在宅ワークが捗る空気清浄機の選び方と置き場所</a></li>
+</ul>
+</div>
 <p class="pr-note">本ページのリンクには一部アフィリエイトリンクが含まれます(#PR)。</p>
 <footer class="site-footer">
 <a href="blog.html">ブログ</a>|<a href="about.html">運営者情報</a>|<a href="privacy.html">プライバシーポリシー</a>|<a href="japan-finds.html">🌏 For overseas buyers</a>
